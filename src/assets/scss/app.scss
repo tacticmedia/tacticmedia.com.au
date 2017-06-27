@@ -4,129 +4,240 @@
 @import 'foundation';
 @import 'motion-ui';
 
+$body-font-family: Lato, 'Helvetica Neue', Helvetica, Roboto, Arial, sans-serif;
+
+$header-styles: (
+  small: (
+    'h1': ('font-size': 24),
+    'h2': ('font-size': 20),
+    'h3': ('font-size': 19),
+    'h4': ('font-size': 18),
+    'h5': ('font-size': 17),
+    'h6': ('font-size': 16),
+  ),
+  medium: (
+    'h1': ('font-size': 48),
+    'h2': ('font-size': 35),
+    'h3': ('font-size': 31),
+    'h4': ('font-size': 25),
+    'h5': ('font-size': 20),
+    'h6': ('font-size': 16),
+  ),
+);
+
 @include foundation-global-styles;
-@include foundation-grid;
+// @include foundation-grid;
 // @include foundation-flex-grid;
 @include foundation-typography;
-@include foundation-button;
-@include foundation-forms;
-// @include foundation-range-input;
-@include foundation-accordion;
-@include foundation-accordion-menu;
-@include foundation-badge;
-@include foundation-breadcrumbs;
-@include foundation-button-group;
-@include foundation-callout;
-@include foundation-card;
-@include foundation-close-button;
-@include foundation-menu;
-@include foundation-menu-icon;
-@include foundation-drilldown-menu;
-@include foundation-dropdown;
-@include foundation-dropdown-menu;
-@include foundation-responsive-embed;
-@include foundation-label;
-@include foundation-media-object;
-@include foundation-off-canvas;
-@include foundation-orbit;
-@include foundation-pagination;
-@include foundation-progress-bar;
-// @include foundation-progress-element;
-// @include foundation-meter-element;
-@include foundation-slider;
-@include foundation-sticky;
-@include foundation-reveal;
-@include foundation-switch;
-@include foundation-table;
-@include foundation-tabs;
-@include foundation-thumbnail;
-@include foundation-title-bar;
-@include foundation-tooltip;
-@include foundation-top-bar;
-@include foundation-visibility-classes;
-@include foundation-float-classes;
+// @include foundation-button;
+// @include foundation-forms;
+// // @include foundation-range-input;
+// @include foundation-accordion;
+// @include foundation-accordion-menu;
+// @include foundation-badge;
+// @include foundation-breadcrumbs;
+// @include foundation-button-group;
+// @include foundation-callout;
+// @include foundation-card;
+// @include foundation-close-button;
+// @include foundation-menu;
+// @include foundation-menu-icon;
+// @include foundation-drilldown-menu;
+// @include foundation-dropdown;
+// @include foundation-dropdown-menu;
+// @include foundation-responsive-embed;
+// @include foundation-label;
+// @include foundation-media-object;
+// @include foundation-off-canvas;
+// @include foundation-orbit;
+// @include foundation-pagination;
+// @include foundation-progress-bar;
+// // @include foundation-progress-element;
+// // @include foundation-meter-element;
+// @include foundation-slider;
+// @include foundation-sticky;
+// @include foundation-reveal;
+// @include foundation-switch;
+// @include foundation-table;
+// @include foundation-tabs;
+// @include foundation-thumbnail;
+// @include foundation-title-bar;
+// @include foundation-tooltip;
+// @include foundation-top-bar;
+// @include foundation-visibility-classes;
+// @include foundation-float-classes;
 // @include foundation-flex-classes;
 
 @include motion-ui-transitions;
 @include motion-ui-animations;
 
+$max-width: 1500px;
 
 header {
     align-items: center;
+    width:100%;
 
     .inner {
         padding:0.5rem 1rem;
-        background:white;
+        max-width:$max-width;
+        margin:auto;
     }
 
     h1 {
-        color:black;
+        color:$black;
         font-size:2rem;
         font-weight:bold;
         margin:0;
         padding:0;
+        font-family: 'Lato', sans-serif;
+        font-weight:900;
         span {
-            font-weight:normal;
+            font-weight:300;
         }
+
+        a {
+            color:$black;
+            text-decoration:none;
+        }
+    }
+}
+
+footer {
+    width:100%;
+    background:white;
+    .inner {
+        padding:0.5rem 1rem;
+        font-size:80%;
+        color:#666;
+        max-width:$max-width;
+        margin:auto;
     }
 }
 
 main {
 
+    max-width:$max-width;
+    width:100%;
 
     section {
-        background:black;
-        border-top-right-radius:5px;
-        border-top-left-radius:5px;
+        color:$black;
+        border-radius:5px;
 
         margin-left:5px;
-        background:black top left no-repeat;
+        background:$black top left no-repeat;
         background-size: auto 100%;
 
         display:flex;
         align-items:stretch;
 
         &:hover {
-            opacity:1;
+            opacity:0.5;
             cursor:pointer;
         }
 
+        h2 {
+            font-family: 'Lato', sans-serif;
+            color:#ddd;
+        }
+
         .section-logo {
-            flex-grow:1;
+            border-top-right-radius:5px;
+            border-bottom-right-radius:5px;
+
             padding-left:15px;
             padding-right:15px;
 
 
             a {
-                color:white;
+                color:#eee;
                 font-size:40px;
             }
         }
 
+        $transparent: 0.7;
+
         .section-content {
             border-top-left-radius:5px;
-            flex-grow:2;
-            padding:100px;
+            border-bottom-left-radius:5px;
+            flex-grow:1;
+            padding:100px 40px 100px 100px;
+            flex-basis:0%;
 
-            background:rgba(0,0,0,0.2);
-            color:white;
+            background:rgba(0,0,0,$transparent);
+            color:#ddd;
+            font-size:120%;
+
+            p {
+                max-width:550px;
+                color:#ddd;
+
+                a {
+                    color:#ddd;
+                    border-bottom:1px solid #c0c0c0;
+
+
+                    &.hidelink {
+                        border-bottom:none;
+                        color:inherit;
+                    }
+
+                    &:hover {
+                        border-bottom:2px solid #fff;
+                        color:white;
+                    }
+
+                    &.contact {
+                        border:1px solid #c0c0c0;
+                        display:inline-block;
+                        padding:10px 30px 12px 30px;
+                        background:rgba(255,255,255,0.1);
+                        box-shadow:0 0 15px rgba(255,255,255, 0.4);
+                        border-radius:5px;
+
+                        &:hover {
+                            box-shadow:0 0 5px white;
+                            background:rgba(255,255,255,0.5);
+                        }
+
+                        span {
+                            margin-right:5px;
+                            vertical-align:middle;
+                        }
+                    }
+                }
+            }
         }
 
         &.active {
             flex-grow:2;
 
+            &:hover {
+                opacity:1;
+                cursor:auto;
+            }
+
             .section-logo {
-                background:rgba(0,0,0,0.2);
+                background:rgba(0,0,0,$transparent);
             }
         }
 
         &:first-child {
             margin-left:0;
             border-top-left-radius:0;
+            border-bottom-left-radius:0;
+
+            &:hover {
+                opacity:1;
+            }
         }
 
         &:last-child {
             border-top-right-radius:0;
+            border-bottom-right-radius:0;
+
+            &:hover {
+                opacity:1;
+            }
         }
     }
 }
