@@ -9,11 +9,68 @@
     <title>Tactic Media Pty Ltd</title>
     <link rel="stylesheet" href="{{root}}assets/css/app.css">
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    <style>
+
+        body, html {
+            width:100%;
+            height:100%;
+            overflow-x: hidden;
+        }
+
+
+#wrapper {
+    height:100%;
+    display:flex;
+    flex-direction: column;
+}
+
+header {
+    background:white;
+}
+
+main {
+    flex-grow:20;
+    background:white;
+    align-items: stretch;
+    flex-direction: row;
+    display:flex;
+}
+
+
+#index {
+    background:black;
+}
+
+#photography {
+    background-image:url(/assets/img/bg/10.jpg);
+}
+
+#aerial-photography {
+    background-image:url(/assets/img/bg/1.jpg);
+}
+
+#redifi {
+    background-image:url(/assets/img/bg/4.jpg);
+}
+
+#software-development {
+    background-image:url(/assets/img/bg/5.jpg);
+}
+
+    </style>
   </head>
   <body>
 
-    {{!-- Pages you create in the src/pages/ folder are inserted here when the flattened page is created. --}}
-    {{> body}}
+    <div id="wrapper">
+        <header>
+            <div class="inner">
+                <h1>TACTIC<span>MEDIA</span></h1>
+            </div>
+        </header>
+        <main>
+        {{> body}}
+        </main>
+    </div>
 
     <script src="{{root}}assets/js/app.js"></script>
   </body>
