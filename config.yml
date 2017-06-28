@@ -17,8 +17,17 @@ UNCSS_OPTIONS:
 
 # Gulp will reference these paths when it copies files
 PATHS:
+  # Path to Deployer PHP trigger
+  deployer:
+    - "src/deployer/**/*"
+    - "src/deployer/**/.*"
+  rootfiles:
+    - "src/robots.txt"
+    # - "src/favicon.ico"
+    - "src/humans.txt"
+    - "src/sitemap.xml"
   # Path to dist folder
-  dist: "dist"  
+  dist: "dist"
   # Paths to static assets that aren't images, CSS, or JavaScript
   assets:
     - "src/assets/**/*"

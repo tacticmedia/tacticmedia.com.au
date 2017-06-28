@@ -26,7 +26,7 @@ function loadConfig() {
 
 // Build the "dist" folder by running all of the below tasks
 gulp.task('build',
- gulp.series(clean, gulp.parallel(pages, sass, javascript, images, copy), styleGuide));
+ gulp.series(clean, gulp.parallel(pages, sass, javascript, images, copy, deployer, rootfiles), cleanDistBg));
 
 // Build the site, run the server, and watch for file changes
 gulp.task('default',
@@ -38,11 +38,25 @@ function clean(done) {
   rimraf(PATHS.dist, done);
 }
 
+function cleanDistBg(done) {
+//   rimraf(PATHS.dist + '/assets/img/bg', done);
+}
+
 // Copy files out of the assets folder
 // This task skips over the "img", "js", and "scss" folders, which are parsed separately
 function copy() {
   return gulp.src(PATHS.assets)
     .pipe(gulp.dest(PATHS.dist + '/assets'));
+}
+
+function deployer() {
+  return gulp.src(PATHS.deployer)
+    .pipe(gulp.dest(PATHS.dist + '/deployer'));
+}
+
+function rootfiles() {
+    return gulp.src(PATHS.rootfiles)
+      .pipe(gulp.dest(PATHS.dist));
 }
 
 // Copy page templates into finished HTML files
