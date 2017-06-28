@@ -124,8 +124,6 @@ main {
         border-radius:5px;
 
         margin-left:5px;
-        background:$black top left no-repeat;
-        background-size: auto 100%;
 
         display:flex;
         align-items:stretch;
@@ -189,7 +187,9 @@ main {
                     &.contact {
                         border:1px solid #c0c0c0;
                         display:inline-block;
-                        padding:10px 30px 12px 30px;
+                        line-height:30px;
+                        padding-left:25px;
+                        padding-right:25px;
                         background:rgba(255,255,255,0.1);
                         box-shadow:0 0 15px rgba(255,255,255, 0.4);
                         border-radius:5px;
@@ -200,6 +200,7 @@ main {
                         }
 
                         span {
+                            line-height:50px;
                             margin-right:5px;
                             vertical-align:middle;
                         }
