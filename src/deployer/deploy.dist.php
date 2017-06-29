@@ -1,6 +1,6 @@
 <?php
 
-die('unauthorized;');
+die('unauthorized');
 
 $shfile = realpath(dirname(__FILE__).'/../../deploy.sh');
 
