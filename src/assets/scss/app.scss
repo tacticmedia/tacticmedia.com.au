@@ -230,6 +230,11 @@ main {
             &:hover {
                 opacity:1;
             }
+
+            .section-logo,
+            .section-content {
+                background:none;
+            }
         }
 
         &:last-child {
@@ -238,6 +243,11 @@ main {
 
             &:hover {
                 opacity:1;
+            }
+
+            .section-logo,
+            .section-content {
+                background:none;
             }
         }
     }
