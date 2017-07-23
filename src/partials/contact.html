@@ -1,8 +1,10 @@
 <section id="contact"{{#ifpage 'contact'}} class="active"{{/ifpage}}{{#unlesspage 'contact'}} onclick="location.href='{{root}}contact.html'"{{/unlesspage}}>
-
     {{#ifpage 'contact'}}
     <div class="section-content">
-        <h2>contact</h2>
+        <h1>
+            <i class="fa fa-fw fa-envelope-o hide-for-large"></i>
+            contact
+        </h1>
         <div class="content">
             <p>If you are a customer with active SLA and need our assistance, your best way is to contact the number in your contract.</p>
             <p>Having said that, we invite everybody to get in touch with us using our Helpdesk system button below. We'll do our best to reply within one business day.</p>
@@ -12,7 +14,10 @@
     {{/ifpage}}
     <div class="section-logo">
         <div class="icon">
-            <a href="{{root}}contact.html"><i class="fa fa-fw fa-envelope-o"></i></a>
+            <a href="{{root}}contact.html">
+                <i class="fa fa-fw fa-envelope-o"></i>
+                <span class="hide-for-large">contact</span>
+            </a>
         </div>
     </div>
 </section>

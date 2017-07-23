@@ -1,7 +1,10 @@
 <section id="redifi"{{#ifpage 'redifi'}} class="active"{{/ifpage}}{{#unlesspage 'redifi'}} onclick="location.href='{{root}}redifi.html'"{{/unlesspage}}>
     {{#ifpage 'redifi'}}
     <div class="section-content">
-        <h2>redifi</h2>
+        <h1>
+            <img class="hide-for-large" src="{{root}}assets/img/redifi.png" srcset="{{root}}assets/img/redifi@2x.png 2x" width="45">
+            redifi
+        </h1>
         <div class="content">
             <p>Redifi is a hassle-free WiFi hotspot service for businesses seeking to stay in touch with their customers even after they leave.</p>
             <p>Thanks to Redifi it is easy to re-engage and motivate them to come back for another visit and increase your sales.</p>
@@ -9,9 +12,12 @@
         </div>
     </div>
     {{/ifpage}}
-    <div class="section-logo">
+    <div class="section-logo{{#ifpage 'aerial-photography'}} show-for-medium{{/ifpage}}">
         <div class="icon">
-            <a href="{{root}}redifi.html"><img src="{{root}}assets/img/redifi.png" srcset="{{root}}assets/img/redifi@2x.png 2x" width="45"></a>
+            <a href="{{root}}redifi.html">
+                <img src="{{root}}assets/img/redifi.png" srcset="{{root}}assets/img/redifi@2x.png 2x" width="45">
+                <span class="hide-for-large">redifi</span>
+            </a>
         </div>
     </div>
 </section>
