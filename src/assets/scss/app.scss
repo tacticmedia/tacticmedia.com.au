@@ -358,6 +358,23 @@ main {
             }
         }
     }
+}
 
+@include breakpoint(medium down) {
+    section {
+        .fa-2x {
+            font-size:1em !important;
+        }
 
+        .aerial-photography-icon {
+            width:26px !important;
+            height:26px !important;
+            vertical-align: middle;
+        }
+
+        .redifi {
+            width:26px !important;
+            height:26px !important;
+        }
+    }
 }
