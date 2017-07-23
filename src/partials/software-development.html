@@ -3,7 +3,7 @@
     {{#ifpage 'software-development'}}
     <div class="section-content">
         <h1>
-            <i class="fa fa-fw fa-code hide-for-large"></i>
+            <i class="fa fa-fw fa-2x fa-code hide-for-large"></i>
             software development
         </h1>
         <div class="content">
@@ -13,10 +13,10 @@
         </div>
     </div>
     {{/ifpage}}
-    <div class="section-logo">
+    <div class="section-logo{{#ifpage 'software-development'}} show-for-medium{{/ifpage}}">
         <div class="icon">
             <a href="{{root}}software-development.html">
-                <i class="fa fa-fw fa-code"></i>
+                <i class="fa fa-fw fa-2x fa-code"></i>
                 <span class="hide-for-large">software development</span>
             </a>
         </div>
