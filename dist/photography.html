@@ -20,14 +20,6 @@
             background:white;
         }
 
-        #wrapper {
-            height:100%;
-            display:flex;
-            flex-direction: column;
-            align-items: center;
-            background:#0a0a0a;
-        }
-
         header {
             background:white;
         }
@@ -36,34 +28,55 @@
             background:white;
         }
 
+        #wrapper {
+            background:#0a0a0a;
+        }
+
         main {
-            flex-grow:20;
             background:white;
-            align-items: stretch;
-            flex-direction: row;
-            display:flex;
         }
 
         main section {
-            background:#0a0a0a top left no-repeat;
-            background-size: auto 100%;
+            background:#0a0a0a top center no-repeat;
+            background-size: cover;
+        }
+
+        @media print, screen and (min-width: 64em) {
+            #wrapper {
+                height:100%;
+                display:flex;
+                flex-direction: column;
+                align-items: center;
+            }
+
+            main {
+                flex-grow:20;
+                align-items: stretch;
+                flex-direction: row;
+                display:flex;
+            }
+
+            main section {
+                background:#0a0a0a top left no-repeat;
+                background-size: auto 100%;
+            }
         }
 
 
         #photography {
-            background-image:url(/assets/img/bg@2x/10.jpg);
+            background-image:url(/assets/img/bg/10.jpg);
         }
 
         #aerial-photography {
-            background-image:url(/assets/img/bg/aerial-photography.jpg);
+            background-image:url(/assets/img/bg/1.jpg);
         }
 
         #redifi {
-            background-image:url(/assets/img/bg/redifi.jpg);
+            background-image:url(/assets/img/bg/11.jpg);
         }
 
         #software-development {
-            background-image:url(/assets/img/bg/software-development.jpg);
+            background-image:url(/assets/img/bg/1.jpg);
         }
     </style>
   </head>
@@ -88,14 +101,20 @@
         <section id="index" onclick="location.href='/'">
             <div class="section-logo">
                 <div class="icon">
-                    <a href="/"><i class="fa fa-fw fa-home"></i></a>
+                    <a href="/">
+                        <i class="fa fa-fw fa-home"></i>
+                        <span class="hide-for-large">home</span>
+                    </a>
                 </div>
             </div>
         </section>
         
         <section id="photography" class="active">
             <div class="section-content">
-                <h2>photography</h2>
+                <h1>
+                    <i class="fa fa-fw fa-camera-retro hide-for-large"></i>
+                    photography
+                </h1>
                 <div class="content">
                     <p>There is and endless world out there; and that needs capturing. We supply creative minds to help portray your occasion or message.</p>
                     <p>We then take beautiful well thought out images and get them ready for you to use. or you can request to use any of our stock photos for your needs.</p>
@@ -104,7 +123,10 @@
             </div>
             <div class="section-logo">
                 <div class="icon">
-                    <a href="photography.html"><i class="fa fa-fw fa-camera-retro"></i></a>
+                    <a href="photography.html">
+                        <i class="fa fa-fw fa-camera-retro"></i>
+                        <span class="hide-for-large">photography</span>
+                    </a>
                 </div>
             </div>
         </section>
@@ -112,16 +134,22 @@
         <section id="aerial-photography" onclick="location.href='aerial-photography.html'">
         
             <div class="section-logo">
-                <div class="icon">
-                    <a href="aerial-photography.html"><span style="display:block;width:55px;height:55px;background-image: url(data:image/svg+xml;base64,PHN2ZyBmaWxsPSIjRkZGRkZGIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB2ZXJzaW9uPSIxLjEiIHg9IjBweCIgeT0iMHB4IiB2aWV3Qm94PSIwIDAgMTAwIDEwMCIgZW5hYmxlLWJhY2tncm91bmQ9Im5ldyAwIDAgMTAwIDEwMCIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSI+PHBhdGggZD0iTTg4LjYsMzUuN2MtMy40LDAtNi4zLDAuMi04LjcsMC42Yy0wLjctMS4yLTEuNy0xLjktMi45LTEuOWMtMSwwLTIsMC42LTIuNywxLjZjLTMuMS0wLjItNy0wLjMtMTEuMi0wLjMgIGMtMTAsMC03LjcsNC42LDIuMyw0LjZjMywwLDUuNy0wLjIsNy45LTAuNWMwLjMsMC44LDEuMywxLjQsMi41LDEuNlY0M2MtMS40LDAuMi0yLjUsMC45LTIuNSwyYzAsMC40LDAuMSwwLjcsMC4xLDFINTUuOSAgYy0xLjYtMS4zLTMuNy0yLjEtNS45LTIuMXMtNC4zLDAuOC01LjksMi4xSDI2LjZjMC0wLjMsMC4xLTAuNiwwLjEtMWMwLTEuMS0xLjEtMS44LTIuNS0ydi0xLjZjMS4yLTAuMiwyLjItMC44LDIuNS0xLjYgIGMyLjIsMC4zLDQuOSwwLjUsNy45LDAuNWMxMCwwLDEyLjMtNC42LDIuMy00LjZjLTQuMiwwLTguMSwwLjEtMTEuMiwwLjNDMjUsMzUsMjQsMzQuNCwyMywzNC40Yy0xLjIsMC0yLjIsMC43LTIuOSwxLjkgIGMtMi40LTAuNC01LjMtMC42LTguNy0wLjZjLTEwLDAtMTIuMyw0LjYtMi4zLDQuNmMzLjgsMCw3LjMtMC4xLDEwLjMtMC4zYzAuMywwLjgsMS4zLDEuMiwyLjQsMS40VjQzYy0xLjQsMC4zLTIuNSwwLjktMi41LDIgIGMwLDIuOSwxLjcsNS4yLDMuOCw1LjJjMC44LDAsMS41LTAuMywyLjEtMC45aDcuM2wtMTAuNiwyMmMtMC41LDEtMC4xLDIuMywxLDIuN2MxLDAuNSwyLjMsMC4xLDIuNy0xbDExLTIyLjkgIGMwLjEtMC4zLDAuMi0wLjYsMC4yLTAuOWg0LjljLTAuNCwwLjktMC43LDItMC44LDMuMWgtMS4xYy0yLDAtMy43LDEuNy0zLjcsMy43djExLjFjMCwyLDEuNywzLjcsMy43LDMuN2g0LjQgIGMxLjQsMS45LDMuNiwzLjIsNi4xLDMuMnM0LjgtMS4zLDYuMS0zLjJoNC40YzIsMCwzLjctMS43LDMuNy0zLjdWNTYuMmMwLTItMS43LTMuNy0zLjctMy43aC0xLjFjLTAuMS0xLjEtMC40LTIuMS0wLjgtMy4xaDQuOSAgYzAsMC4zLDAuMSwwLjYsMC4yLDAuOWwxMSwyMi45YzAuNSwxLDEuNywxLjUsMi43LDFzMS41LTEuNywxLTIuN2wtMTAuNi0yMmw2LjctMC4yYzAuNiwwLjYsMS4zLDAuOSwyLjEsMC45YzIuMSwwLDMuOC0yLjMsMy44LTUuMiAgYzAtMS4xLTEuMS0xLjctMi41LTJ2LTEuNmMxLjEtMC4yLDIuMS0wLjYsMi40LTEuNGMzLDAuMiw2LjUsMC4zLDEwLjMsMC4zQzEwMC45LDQwLjMsOTguNiwzNS43LDg4LjYsMzUuN3ogTTQyLjIsNTcuMyAgYy0xLjUsMC0yLjgtMC43LTIuOC0xLjVzMS4zLTEuNSwyLjgtMS41UzQ1LDU1LDQ1LDU1LjhTNDMuNyw1Ny4zLDQyLjIsNTcuM3ogTTUwLDY4LjljLTIuOSwwLTUuMi0yLjMtNS4yLTUuMiAgYzAtMi45LDIuMy01LjIsNS4yLTUuMnM1LjIsMi4zLDUuMiw1LjJDNTUuMiw2Ni41LDUyLjksNjguOSw1MCw2OC45eiIvPjwvc3ZnPg==);"></span></a>
-                </div>
+                <h2 class="icon">
+                    <a href="aerial-photography.html">
+                        <span style="display:inline-block;vertical-align:top;width:55px;height:55px;background-image: url(data:image/svg+xml;base64,PHN2ZyBmaWxsPSIjRkZGRkZGIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB2ZXJzaW9uPSIxLjEiIHg9IjBweCIgeT0iMHB4IiB2aWV3Qm94PSIwIDAgMTAwIDEwMCIgZW5hYmxlLWJhY2tncm91bmQ9Im5ldyAwIDAgMTAwIDEwMCIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSI+PHBhdGggZD0iTTg4LjYsMzUuN2MtMy40LDAtNi4zLDAuMi04LjcsMC42Yy0wLjctMS4yLTEuNy0xLjktMi45LTEuOWMtMSwwLTIsMC42LTIuNywxLjZjLTMuMS0wLjItNy0wLjMtMTEuMi0wLjMgIGMtMTAsMC03LjcsNC42LDIuMyw0LjZjMywwLDUuNy0wLjIsNy45LTAuNWMwLjMsMC44LDEuMywxLjQsMi41LDEuNlY0M2MtMS40LDAuMi0yLjUsMC45LTIuNSwyYzAsMC40LDAuMSwwLjcsMC4xLDFINTUuOSAgYy0xLjYtMS4zLTMuNy0yLjEtNS45LTIuMXMtNC4zLDAuOC01LjksMi4xSDI2LjZjMC0wLjMsMC4xLTAuNiwwLjEtMWMwLTEuMS0xLjEtMS44LTIuNS0ydi0xLjZjMS4yLTAuMiwyLjItMC44LDIuNS0xLjYgIGMyLjIsMC4zLDQuOSwwLjUsNy45LDAuNWMxMCwwLDEyLjMtNC42LDIuMy00LjZjLTQuMiwwLTguMSwwLjEtMTEuMiwwLjNDMjUsMzUsMjQsMzQuNCwyMywzNC40Yy0xLjIsMC0yLjIsMC43LTIuOSwxLjkgIGMtMi40LTAuNC01LjMtMC42LTguNy0wLjZjLTEwLDAtMTIuMyw0LjYtMi4zLDQuNmMzLjgsMCw3LjMtMC4xLDEwLjMtMC4zYzAuMywwLjgsMS4zLDEuMiwyLjQsMS40VjQzYy0xLjQsMC4zLTIuNSwwLjktMi41LDIgIGMwLDIuOSwxLjcsNS4yLDMuOCw1LjJjMC44LDAsMS41LTAuMywyLjEtMC45aDcuM2wtMTAuNiwyMmMtMC41LDEtMC4xLDIuMywxLDIuN2MxLDAuNSwyLjMsMC4xLDIuNy0xbDExLTIyLjkgIGMwLjEtMC4zLDAuMi0wLjYsMC4yLTAuOWg0LjljLTAuNCwwLjktMC43LDItMC44LDMuMWgtMS4xYy0yLDAtMy43LDEuNy0zLjcsMy43djExLjFjMCwyLDEuNywzLjcsMy43LDMuN2g0LjQgIGMxLjQsMS45LDMuNiwzLjIsNi4xLDMuMnM0LjgtMS4zLDYuMS0zLjJoNC40YzIsMCwzLjctMS43LDMuNy0zLjdWNTYuMmMwLTItMS43LTMuNy0zLjctMy43aC0xLjFjLTAuMS0xLjEtMC40LTIuMS0wLjgtMy4xaDQuOSAgYzAsMC4zLDAuMSwwLjYsMC4yLDAuOWwxMSwyMi45YzAuNSwxLDEuNywxLjUsMi43LDFzMS41LTEuNywxLTIuN2wtMTAuNi0yMmw2LjctMC4yYzAuNiwwLjYsMS4zLDAuOSwyLjEsMC45YzIuMSwwLDMuOC0yLjMsMy44LTUuMiAgYzAtMS4xLTEuMS0xLjctMi41LTJ2LTEuNmMxLjEtMC4yLDIuMS0wLjYsMi40LTEuNGMzLDAuMiw2LjUsMC4zLDEwLjMsMC4zQzEwMC45LDQwLjMsOTguNiwzNS43LDg4LjYsMzUuN3ogTTQyLjIsNTcuMyAgYy0xLjUsMC0yLjgtMC43LTIuOC0xLjVzMS4zLTEuNSwyLjgtMS41UzQ1LDU1LDQ1LDU1LjhTNDMuNyw1Ny4zLDQyLjIsNTcuM3ogTTUwLDY4LjljLTIuOSwwLTUuMi0yLjMtNS4yLTUuMiAgYzAtMi45LDIuMy01LjIsNS4yLTUuMnM1LjIsMi4zLDUuMiw1LjJDNTUuMiw2Ni41LDUyLjksNjguOSw1MCw2OC45eiIvPjwvc3ZnPg==);"></span>
+                        <span class="hide-for-large">aerial photography</span>
+                    </a>
+                </h2>
             </div>
         </section>
         
         <section id="redifi" onclick="location.href='redifi.html'">
             <div class="section-logo">
                 <div class="icon">
-                    <a href="redifi.html"><img src="assets/img/redifi.png" srcset="assets/img/redifi@2x.png 2x" width="45"></a>
+                    <a href="redifi.html">
+                        <img src="assets/img/redifi.png" srcset="assets/img/redifi@2x.png 2x" width="45">
+                        <span class="hide-for-large">redifi</span>
+                    </a>
                 </div>
             </div>
         </section>
@@ -130,16 +158,21 @@
         
             <div class="section-logo">
                 <div class="icon">
-                    <a href="software-development.html"><i class="fa fa-fw fa-code"></i></a>
+                    <a href="software-development.html">
+                        <i class="fa fa-fw fa-code"></i>
+                        <span class="hide-for-large">software development</span>
+                    </a>
                 </div>
             </div>
         </section>
         
         <section id="contact" onclick="location.href='contact.html'">
-        
             <div class="section-logo">
                 <div class="icon">
-                    <a href="contact.html"><i class="fa fa-fw fa-envelope-o"></i></a>
+                    <a href="contact.html">
+                        <i class="fa fa-fw fa-envelope-o"></i>
+                        <span class="hide-for-large">contact</span>
+                    </a>
                 </div>
             </div>
         </section>
