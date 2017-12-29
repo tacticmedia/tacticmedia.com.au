@@ -6,9 +6,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{{ title }}</title>
     <meta name="robots" content="index,follow">
-    <meta name="description" content="">
+    <meta name="description" content="Tactic Media - Photography, Aerial photography, Software development and Redifi operator in Australia">
+    {{#if globals.production}}
+    <meta name="author" content="https://tacticmedia.imgix.net/humans.txt">
+    <link rel="stylesheet" href="https://tacticmedia.imgix.net/assets/css/app.css">
+    {{else}}
     <meta name="author" content="{{root}}humans.txt">
     <link rel="stylesheet" href="{{root}}assets/css/app.css">
+    {{/if}}
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css?family=Lato:300,400,900" rel="stylesheet">
     <style type="text/css">
@@ -62,6 +67,25 @@
             }
         }
 
+        {{#if globals.production}}
+
+        #photography {
+            background-image:url(https://tacticmedia.imgix.net/assets/img/bg@2x/photography.jpg);
+        }
+
+        #aerial-photography {
+            background-image:url(https://tacticmedia.imgix.net/assets/img/bg@2x/aerial-photography.jpg);
+        }
+
+        #redifi {
+            background-image:url(https://tacticmedia.imgix.net/assets/img/bg@2x/redifi.jpg);
+        }
+
+        #software-development {
+            background-image:url(https://tacticmedia.imgix.net/assets/img/bg@2x/software-development.jpg);
+        }
+
+        {{else}}
 
         #photography {
             background-image:url(/assets/img/bg@2x/photography.jpg);
@@ -78,6 +102,8 @@
         #software-development {
             background-image:url(/assets/img/bg@2x/software-development.jpg);
         }
+
+        {{/if}}
     </style>
   </head>
   <body>
@@ -105,6 +131,10 @@
         </footer>
     </div>
 
+    {{#if globals.production}}
+    <script src="https://tacticmedia.imgix.net/assets/js/app.js"></script>
+    {{else}}
     <script src="{{root}}assets/js/app.js"></script>
+    {{/if}}
   </body>
 </html>
