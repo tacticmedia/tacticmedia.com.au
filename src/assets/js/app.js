@@ -4,9 +4,9 @@ var arrowsEnabled = true;
 
 var pages = [
     'index',
+    'redifi',
     'photography',
     'aerial-photography',
-    'redifi',
     'software-development',
     'contact'
 ];

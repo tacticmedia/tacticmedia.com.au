@@ -7,8 +7,8 @@
     <title>Contact / Tactic Media</title>
     <meta name="robots" content="index,follow">
     <meta name="description" content="Tactic Media - Photography, Aerial photography, Software development and Redifi operator in Australia">
-    <meta name="author" content="https://tacticmedia.imgix.net/humans.txt">
-    <link rel="stylesheet" href="https://tacticmedia.imgix.net/assets/css/app.css">
+    <meta name="author" content="humans.txt">
+    <link rel="stylesheet" href="assets/css/app.css">
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css?family=Lato:300,400,900" rel="stylesheet">
     <style type="text/css">
@@ -64,19 +64,19 @@
 
 
         #photography {
-            background-image:url(https://tacticmedia.imgix.net/assets/img/bg@2x/photography.jpg);
+            background-image:url(/assets/img/bg@2x/photography.jpg);
         }
 
         #aerial-photography {
-            background-image:url(https://tacticmedia.imgix.net/assets/img/bg@2x/aerial-photography.jpg);
+            background-image:url(/assets/img/bg@2x/aerial-photography.jpg);
         }
 
         #redifi {
-            background-image:url(https://tacticmedia.imgix.net/assets/img/bg@2x/redifi.jpg);
+            background-image:url(/assets/img/bg@2x/redifi.jpg);
         }
 
         #software-development {
-            background-image:url(https://tacticmedia.imgix.net/assets/img/bg@2x/software-development.jpg);
+            background-image:url(/assets/img/bg@2x/software-development.jpg);
         }
 
     </style>
@@ -110,6 +110,17 @@
             </div>
         </section>
         
+        <section id="redifi" onclick="location.href='redifi.html'">
+            <div class="section-logo">
+                <div class="icon">
+                    <a href="redifi.html">
+                        <img src="assets/img/redifi.png" srcset="assets/img/redifi@2x.png 2x" width="50" class="redifi" alt="">
+                        <span class="hide-for-large">redifi</span>
+                    </a>
+                </div>
+            </div>
+        </section>
+        
         <section id="photography" onclick="location.href='photography.html'">
             <div class="section-logo">
                 <div class="icon">
@@ -128,17 +139,6 @@
                     <a href="aerial-photography.html">
                         <span class="aerial-photography-icon"></span>
                         <span class="hide-for-large">aerial photography</span>
-                    </a>
-                </div>
-            </div>
-        </section>
-        
-        <section id="redifi" onclick="location.href='redifi.html'">
-            <div class="section-logo">
-                <div class="icon">
-                    <a href="redifi.html">
-                        <img src="assets/img/redifi.png" srcset="assets/img/redifi@2x.png 2x" width="50" class="redifi" alt="">
-                        <span class="hide-for-large">redifi</span>
                     </a>
                 </div>
             </div>
@@ -185,9 +185,9 @@
             <div class="inner">
                 &copy; 2017-2018 Tactic Media Pty Ltd, ABN 31 619 922 977
                 <ul class="show-for-large">
+                    <li><a href="redifi.html">redifi</a></li>
                     <li><a href="photography.html">photography</a></li>
                     <li><a href="aerial-photography.html">aerial photography</a></li>
-                    <li><a href="redifi.html">redifi</a></li>
                     <li><a href="software-development.html">software development</a></li>
                     <li class="active"><a href="contact.html">contact</a></li>
                 </ul>
@@ -196,6 +196,6 @@
         </footer>
     </div>
 
-    <script src="https://tacticmedia.imgix.net/assets/js/app.js"></script>
+    <script src="assets/js/app.js"></script>
   </body>
 </html>
