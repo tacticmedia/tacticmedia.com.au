@@ -1,9 +1,0 @@
-/* TEAM */
-
-Creator: Jan Klan
-Site: https://jan.klan.com.au
-Location: Australia
-
-Creator: Lauren Klan
-Site: https://lauren.klan.com.au
-Location: Australia
