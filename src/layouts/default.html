@@ -5,7 +5,7 @@
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{{ title }}</title>
-    <meta name="robots" content="index,follow">
+    <meta name="robots" content="{{#ifpage 'jan'}}no{{/ifpage}}index,follow">
     <meta name="description" content="Tactic Media - Photography, Aerial photography, Software development and Redifi operator in Australia">
     {{#if globals.production}}
     <meta name="author" content="https://tacticmedia.imgix.net/humans.txt">
