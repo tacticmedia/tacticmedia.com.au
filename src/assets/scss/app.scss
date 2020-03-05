@@ -44,7 +44,7 @@ $header-styles: (
 // // @include foundation-flex-grid;
 
 // // Generic components
-// @include foundation-button;
+@include foundation-button;
 // @include foundation-button-group;
 // @include foundation-close-button;
 // @include foundation-label;
@@ -98,13 +98,12 @@ $transparent: 0.7;
 $max-width: 1500px;
 
 header, footer {
-
     width:100%;
     background:white;
+}
 
-    .inner {
-        padding:0.5rem 1rem;
-    }
+.inner {
+    padding:0.5rem 1rem;
 }
 
 header {
@@ -172,7 +171,7 @@ main {
         margin-right:5px; // to add the white margin from the right corner for small devices
 
         &:last-child {
-            margin-bottom:0;
+            margin-bottom:0 !important;
         }
 
         &:hover {
@@ -333,9 +332,6 @@ main {
                 flex-grow:1;
                 padding:100px 40px 100px 100px;
                 flex-basis:0%;
-
-
-
             }
 
             &.active {
@@ -398,6 +394,52 @@ main {
         .redifi {
             width:26px !important;
             height:26px !important;
+        }
+    }
+}
+
+.vcard {
+    height:100vh;
+    display:flex;
+    background:white;
+    text-align:center;
+    border-bottom:1px #dadada solid;
+
+
+
+    box-shadow: 
+        inset 0px 11px 8px -10px #CCC,
+        inset 0px -11px 8px -10px #CCC; 
+
+    align-items: center;
+    justify-content: center;
+
+    ul {
+        list-style-type:none;
+        margin:0;
+        padding:1rem 0;
+    }
+
+    p {
+        margin:0;
+        padding:2rem 0;
+    }
+
+    .muted {
+        color:#666;
+        display:inline-block;
+        padding-bottom:1rem;
+    }
+
+    img.portrait {
+        border-radius:50%;
+    }
+
+    h1 {
+        padding-top:0.5rem;
+        span {
+            display:block;
+            font-size:80%;
         }
     }
 }

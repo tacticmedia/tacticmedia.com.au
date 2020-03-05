@@ -1,4 +1,4 @@
-<section id="contact"{{#ifpage 'contact'}} class="active"{{/ifpage}}{{#unlesspage 'contact'}} onclick="location.href='{{root}}contact.html'"{{/unlesspage}}>
+<section id="contact"{{#ifpage 'contact' or 'jan'}} class="active"{{/ifpage}}{{#unlesspage 'contact'}} onclick="location.href='{{root}}contact.html'"{{/unlesspage}}>
     {{#ifpage 'contact'}}
     <div class="section-content">
         <h1>
@@ -12,7 +12,7 @@
         </div>
     </div>
     {{/ifpage}}
-    <div class="section-logo{{#ifpage 'contact'}} show-for-medium{{/ifpage}}">
+    <div class="section-logo{{#ifpage 'contact'}} show-for-medium{{/ifpage}}"{{#ifpage 'jan'}} style="display:block !important"{{/ifpage}}>
         <div class="icon">
             <a href="{{root}}contact.html">
                 <i class="fa fa-fw fa-2x fa-envelope-o"></i>
