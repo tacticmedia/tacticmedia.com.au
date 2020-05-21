@@ -1,6 +1,0 @@
-pipelines:
-  branches:
-    master:
-      - step:
-          script:
-            - curl https://tacticmedia.com.au/deployer/deploy.php
