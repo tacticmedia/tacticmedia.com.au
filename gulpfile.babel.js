@@ -32,7 +32,7 @@ function loadConfig() {
 // Build the "dist" folder by running all of the below tasks
 // Sass must be run later so UnCSS can search for used classes in the others assets.
 gulp.task('build',
- gulp.series(clean, gulp.parallel(pages, javascript, images, copy, deployer, rootfiles), sass, styleGuide));
+ gulp.series(clean, gulp.parallel(pages, javascript, images, copy, rootfiles), sass, styleGuide));
 
 // Build the site, run the server, and watch for file changes
 gulp.task('default',
@@ -76,11 +76,6 @@ function styleGuide(done) {
     output: PATHS.dist + '/styleguide.html',
     template: 'src/styleguide/template.html'
   }, done);
-}
-
-function deployer() {
-  return gulp.src(PATHS.deployer)
-    .pipe(gulp.dest(PATHS.dist + '/deployer'));
 }
 
 function rootfiles() {

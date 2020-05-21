@@ -233,7 +233,7 @@ main {
 
             .content {
 
-                p {
+                p, ol {
                     text-align:justify;
                     max-width:550px;
                     color:#ddd;
@@ -283,6 +283,10 @@ main {
                     &:last-child {
                         margin-top:40px;
                         margin-bottom:0;
+
+                        &.no-margin-top {
+                            margin-top:0;
+                        }
                     }
                 }
             }
@@ -443,4 +447,12 @@ main {
             font-size:80%;
         }
     }
+}
+
+.standout {
+    color:white !important;
+}
+
+ol ol {
+    list-style-type: lower-roman;
 }
