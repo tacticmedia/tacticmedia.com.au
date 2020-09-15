@@ -3,18 +3,21 @@ layout: blank
 ---
 
 <header>
-    <h1>TACTIC<span>MEDIA</span></h1>
+    <div class="container inner">
+        <h1>TACTIC<span>MEDIA</span></h1>
+    </div>
 </header>
-<main id="main">
+<main id="main" class="container">
     <section id="home" class="active">
         <header>
             <h1>Tactic Media</h1>
         </header>
         <div class="content">
             <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Perferendis, adipisci deleniti alias eligendi similique libero veniam voluptatibus amet dolore, reprehenderit enim perspiciatis culpa velit nam nihil nostrum nobis. Consectetur, minima?</p>
+            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Perferendis, adipisci deleniti alias eligendi similique libero veniam voluptatibus amet dolore, reprehenderit enim perspiciatis culpa velit nam nihil nostrum nobis. Consectetur, minima?</p>
         </div>
     </section>
-    <section id="software-development">
+    <section id="software-development" class="background-photo">
         <header>
             <h1>Custom Software Development</h1>
         </header>
@@ -22,7 +25,7 @@ layout: blank
             <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Perferendis, adipisci deleniti alias eligendi similique libero veniam voluptatibus amet dolore, reprehenderit enim perspiciatis culpa velit nam nihil nostrum nobis. Consectetur, minima?</p>
         </div>
     </section>
-    <section id="photography">
+    <section id="photography" class="background-photo">
         <header>
             <h1>Photography</h1>
         </header>
@@ -30,7 +33,7 @@ layout: blank
             <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Perferendis, adipisci deleniti alias eligendi similique libero veniam voluptatibus amet dolore, reprehenderit enim perspiciatis culpa velit nam nihil nostrum nobis. Consectetur, minima?</p>
         </div>
     </section>
-    <section id="aerial-photography">
+    <section id="aerial-photography" class="background-photo">
         <header>
             <h1>Aerial Photography</h1>
         </header>
@@ -38,7 +41,7 @@ layout: blank
             <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Perferendis, adipisci deleniti alias eligendi similique libero veniam voluptatibus amet dolore, reprehenderit enim perspiciatis culpa velit nam nihil nostrum nobis. Consectetur, minima?</p>
         </div>
     </section>
-    <section id="redifi">
+    <section id="redifi" class="background-photo">
         <header>
             <h1>Redifi</h1>
         </header>
@@ -56,12 +59,14 @@ layout: blank
     </section>
 </main>
 <footer>
-    <p>&copy; 2020 Tactic Media Pty Ltd, ABN 31 619 922 977</p>
-    <ul>
-        <li{{#ifpage 'redifi'}} class="active"{{/ifpage}}><a href="{{root}}redifi.html">redifi</a></li>
-        <li{{#ifpage 'photography'}} class="active"{{/ifpage}}><a href="{{root}}photography.html">photography</a></li>
-        <li{{#ifpage 'aerial-photography'}} class="active"{{/ifpage}}><a href="{{root}}aerial-photography.html">aerial photography</a></li>
-        <li{{#ifpage 'software-development'}} class="active"{{/ifpage}}><a href="{{root}}software-development.html">software development</a></li>
-        <li{{#ifpage 'contact'}} class="active"{{/ifpage}}><a href="{{root}}contact.html">contact</a></li>
-    </ul>
+    <div class="container inner">
+        <p>&copy; 2020 Tactic Media Pty Ltd, ABN 31 619 922 977</p>
+        <ul>
+            <li{{#ifpage 'redifi'}} class="active"{{/ifpage}}><a href="{{root}}redifi.html">redifi</a></li>
+            <li{{#ifpage 'photography'}} class="active"{{/ifpage}}><a href="{{root}}photography.html">photography</a></li>
+            <li{{#ifpage 'aerial-photography'}} class="active"{{/ifpage}}><a href="{{root}}aerial-photography.html">aerial photography</a></li>
+            <li{{#ifpage 'software-development'}} class="active"{{/ifpage}}><a href="{{root}}software-development.html">software development</a></li>
+            <li{{#ifpage 'contact'}} class="active"{{/ifpage}}><a href="{{root}}contact.html">contact</a></li>
+        </ul>
+    </div>
 </footer>
