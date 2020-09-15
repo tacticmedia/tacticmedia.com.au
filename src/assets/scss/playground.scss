@@ -3,8 +3,15 @@ $iconSize: 40px;
 $iconPadding: 15px;
 $bgBlackTint: linear-gradient( rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7) );
 
+@import '../icons/css/tacticmedia';
+
 * {
     font-family: Lato, 'Helvetica Neue', Helvetica, Roboto, Arial, sans-serif;
+}
+
+a {
+    // We're  using border-bottom to add an underline with :hover effect, so the default text decoration can go
+    text-decoration:none; 
 }
 
 body {
@@ -19,12 +26,15 @@ body {
     width:100%;
     max-width:1300px;
     margin:auto;
-
 }
 
 #wrapper {
     width:100vw;
-    height:100vh;
+
+    @media only screen and (min-width: 768px) {
+        height:100vh;
+    } 
+    
     margin:0;
     padding:0;
     background:$black;
@@ -64,18 +74,26 @@ body {
 
         .inner {
             display:flex;
-            flex-direction:row;
+
+            flex-direction:column-reverse;
+            @media only screen and (min-width: 768px) {
+                flex-direction:row;
+            }
             justify-content: space-between;
 
-            p {
+            p, ul {
                 margin:0;
-                padding:0;
+                padding:0 0 0 0;
+            }
+
+            @media only screen and (max-width: 768px) {
+                ul {
+                    display:none;
+                }
             }
 
             ul {
                 list-style-type:none;
-                margin:0;
-                padding:0;
 
                 li {
                     float:left;
@@ -100,36 +118,113 @@ body {
 
 main {
     display:flex;
-    height:100%;
-    flex-direction: row;
+
+    flex-direction:column;
+
+    @media only screen and (min-width: 768px) {
+        height:100%;
+        flex-direction: row;
+    } 
+    
     background:white;
 
     section {
         color:white;
-        background:$black center no-repeat;
-        background-size:cover;
-        border-radius:5px;
-        margin-left:5px;
-        padding:$iconSize/2+$iconPadding;
-        position:relative;
+        background:$black right top no-repeat;
+        @media only screen and (min-width: 768px) {
+            background:$black center no-repeat;
 
-        // H1 and section content is hidden, unless the section is .active
-        header, .content {
-            display:none;
+            &#aerial-photography {
+                background-position: top center;
+            }
+        }
+        background-size:cover;
+        border-top-right-radius:5px;
+        border-bottom-right-radius:5px;
+
+        margin:0px 5px 5px 0px;
+        @media only screen and (min-width: 768px) {
+            margin:0 0 0 5px;
+            border-radius:5px; // all corders should be rounded on large screens
         }
 
-        header {
-            padding:50px 0 30px 50px;
+        padding:$iconSize/2; // When the section isn't active, the only concern is that icons must fit
+        &.active { // Once the section is active, additional padding is necessary to make it look good
+            padding:$iconSize/2 $iconSize $iconSize $iconSize/2;
+        }
+
+        @media only screen and (min-width: 768px) {
+            padding:$iconSize/2+$iconPadding;
+        }
+        position:relative; // for the icon that is absolutely positioned
+
+        .content {
+            display:none;
+        }
+        @media only screen and (min-width: 768px) {
+            // H1 and section content is hidden, unless the section is .active
+            header {
+                display:none;
+            }
+
+            
+            display:flex;
+            flex-direction:column;
+            overflow:auto;
+        }
+
+        &>a {
+            overflow:hidden;
+            position:absolute;
+            top:0;
+            left:0;
+            width:100%;
+            height:100%;
+            color:transparent;
+        }
+
+        &.active>a {
+            display:none;
+            width:1px;
+            height:1px;
+        }
+
+        &>header {
+            padding:0;
+            
+            @media only screen and (min-width: 768px) {
+                padding:0 0 0 $iconSize/2;
+            }
+
+            @media only screen and (min-width: 1280px) {
+                padding:$iconSize 0 0 $iconSize;
+            }
+            
             h1 {
                 margin:0;
                 padding:0;
+                text-transform: lowercase;
+                font-weight:400;
             }
         }
 
-        .content {
-            padding:0 100px 0 50px;
-            p, ol {
+        &>.content {
+
+            padding:$iconSize/2 0 0 0;
+            @media only screen and (min-width: 768px) {
+                padding:$iconSize/2;
                 text-align:justify;
+            }
+
+            @media only screen and (min-width: 1280px) {
+                padding:$iconSize 10% 0 $iconSize;
+                text-align:justify;
+                overflow:auto;
+            }
+
+
+
+            p, ol {
                 color:#fff;
 
                 line-height:150%;
@@ -177,7 +272,7 @@ main {
 
             p {
                 &:last-child {
-                    margin-top:40px;
+                    margin-top:$iconSize;
                     margin-bottom:0;
 
                     &.no-margin-top {
@@ -187,7 +282,7 @@ main {
             }
         }
 
-        &:hover {
+        &:hover:not(.active) {
             cursor:pointer;
         }
 
@@ -285,17 +380,19 @@ main {
             }
         }
 
-        &:first-of-type {
-            // First section must not have rounded borders on the left,
-            border-top-left-radius: 0;
-            border-bottom-left-radius: 0;
-            // nor the left margin (it's what makes the white dividing lines show up, thanks to the white background)
-            margin-left:0;
-        }
+        @media only screen and (min-width: 768px) {
+            &:first-of-type {
+                // First section must not have rounded borders on the left,
+                border-top-left-radius: 0;
+                border-bottom-left-radius: 0;
+                // nor the left margin (it's what makes the white dividing lines show up, thanks to the white background)
+                margin-left:0;
+            }
 
-        &:last-of-type {
-            border-top-right-radius: 0;
-            border-bottom-right-radius: 0;
+            &:last-of-type {
+                border-top-right-radius: 0;
+                border-bottom-right-radius: 0;
+            }
         }
     }
 }

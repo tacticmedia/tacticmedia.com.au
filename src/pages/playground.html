@@ -2,71 +2,114 @@
 layout: blank
 ---
 
+<script>
+    let active = 'home';
+    function activate(what) {
+        document.getElementById(active).classList.remove('active');
+        document.getElementById(what).classList.add('active');
+        active = what;
+    }
+</script>
 <header>
-    <div class="container inner">
-        <h1>TACTIC<span>MEDIA</span></h1>
+    <div class="container">
+        <div class="inner">
+            <h1>TACTIC<span>MEDIA</span></h1>
+        </div>
     </div>
 </header>
 <main id="main" class="container">
-    <section id="home" class="active">
+    <section id="home" class="active" onclick="activate(this.id)">
         <header>
-            <h1>Tactic Media</h1>
+            <h1>Our team at your service</h1>
         </header>
         <div class="content">
-            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Perferendis, adipisci deleniti alias eligendi similique libero veniam voluptatibus amet dolore, reprehenderit enim perspiciatis culpa velit nam nihil nostrum nobis. Consectetur, minima?</p>
-            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Perferendis, adipisci deleniti alias eligendi similique libero veniam voluptatibus amet dolore, reprehenderit enim perspiciatis culpa velit nam nihil nostrum nobis. Consectetur, minima?</p>
+            <p>The main focus at Tactic Media is custom <a href="{{root}}software-development.html">software development</a>.</p>
+            <p>We're working with on projects of all sizes, spanning from presentation websites websites to complex systems used by thousands users every day.</p>
+            <p>We also offer our services of <a href="{{root}}photography.html">photography</a>, <a href="{{root}}aerial-photography.html">aerial photography</a>, and we operate our own cloud platform called <a href="{{root}}redifi.html">redifi</a>.</p>
+            <p><a href="{{root}}/contact.html" class="contact"><span class="icon-mail"></span>contact us</a></p>
         </div>
     </section>
-    <section id="software-development" class="background-photo">
+    <section id="software-development" class="background-photo" onclick="activate(this.id)">
+        <a href="{{root}}software-development.html" onclick="return false;">Custom Software Development</a>
         <header>
             <h1>Custom Software Development</h1>
         </header>
         <div class="content">
-            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Perferendis, adipisci deleniti alias eligendi similique libero veniam voluptatibus amet dolore, reprehenderit enim perspiciatis culpa velit nam nihil nostrum nobis. Consectetur, minima?</p>
+            <p>Tactic Media is and always will be run by security and performance advocates that give attention to detail.</p>
+            <p>Our speciality is finding a scalable solution for the problem you're trying to solve.</p>
+            <p>Once the system architecture blueprint is ready, somebody has to do the heavy lifting and develop the product that can ship. We can be your team, lead your team, or be part of your team.</p>
+            <p>Get in touch if you need help with your current project, or are thinking about the next one.</p>
+            <p><a href="{{root}}/contact.html" class="contact"><span class="icon-mail"></span>contact us</a></p>
         </div>
     </section>
-    <section id="photography" class="background-photo">
+    <section id="photography" class="background-photo" onclick="activate(this.id)">
         <header>
             <h1>Photography</h1>
         </header>
         <div class="content">
-            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Perferendis, adipisci deleniti alias eligendi similique libero veniam voluptatibus amet dolore, reprehenderit enim perspiciatis culpa velit nam nihil nostrum nobis. Consectetur, minima?</p>
+            <p>There is and endless world out there; and that needs capturing. We supply creative minds to help portray your occasion or message.</p>
+            <p>We then take beautiful well thought out images and get them ready for you to use. Alternatively you can request to look at our stock portfolio.</p>
+            <p><a href="{{root}}/contact.html" class="contact"><span class="icon-mail"></span>contact us</a></p>
         </div>
     </section>
-    <section id="aerial-photography" class="background-photo">
+    <section id="aerial-photography" class="background-photo" onclick="activate(this.id)">
         <header>
             <h1>Aerial Photography</h1>
         </header>
         <div class="content">
-            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Perferendis, adipisci deleniti alias eligendi similique libero veniam voluptatibus amet dolore, reprehenderit enim perspiciatis culpa velit nam nihil nostrum nobis. Consectetur, minima?</p>
+            <p>The sky is no longer the limit. Our certified skilled pilots are ready to take off and capture those moments you wish to remember forever, from a whole new angle.</p>
+            <p>We can help you capture photos and footage from weddings, parties, team building events etc.</p>
+            <p><a href="{{root}}/contact.html" class="contact"><span class="icon-mail"></span>contact us</a></p>
         </div>
     </section>
-    <section id="redifi" class="background-photo">
+    <section id="redifi" class="background-photo" onclick="activate(this.id)">
         <header>
             <h1>Redifi</h1>
         </header>
         <div class="content">
-            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Perferendis, adipisci deleniti alias eligendi similique libero veniam voluptatibus amet dolore, reprehenderit enim perspiciatis culpa velit nam nihil nostrum nobis. Consectetur, minima?</p>
+            <p>redifi aims at helping small businesses thrive.</p>
+            <p>It is made of two very different components:</p>
+            <p><strong>Redifi Menu</strong> is an online ordering system. <a href="https://www.patreon.com/posts/introducing-menu-36554764">Read more</a> about what it is and who is it for, or head over to <a href="https://redifi.io">https://redifi.io</a> get started.</p>
+            <p><strong>Redifi Database</strong> is a lead generator and customer database builder. It's fit for event organisers, hospitality venues and any other business trying to create a connection with their guests. Check it out at <a href="https://redifi.net">https://redifi.net</a>.</p>
+            <p>
+                <strong>Questions?</strong><br><br>
+                <p><a href="{{root}}/contact.html" class="contact"><span class="icon-mail"></span>contact us</a></p>
+            </p>
         </div>
     </section>
-    <section id="contact">
+    <section id="contact" onclick="activate(this.id)">
         <header>
             <h1>Contact</h1>
         </header>
         <div class="content">
-            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Perferendis, adipisci deleniti alias eligendi similique libero veniam voluptatibus amet dolore, reprehenderit enim perspiciatis culpa velit nam nihil nostrum nobis. Consectetur, minima?</p>
+            <p>We're here to help you if you need assistance. Strangers are welcome!</p>
+            <p><strong class="standout">Please follow the steps below to get the best results:</strong></p>
+            <ol>
+                <li>Send all available information to <a href="mailto:support@tacticmedia.com.au" class="standout"><i class="fa fa-envelope fa-fw"></i>support@tacticmedia.com.au</a></li>
+                <li>If you don't need an immediate response, you're done</li>
+                <li style="padding-top:0.5rem">If you need urgent attention
+                    <ol>
+                        <li>call the phone number in your service agreement,</li>
+                        <li>or, if you don't have a service agreement, please call <a href="callto://+61742434176" class="standout"><i class="fa fa-phone fa-fw"></i>0742 434 176</a></li>
+                    </ol>
+                </li>
+            </ol>
+            <p>All emails sent to the support e-mail address will be assigned a unique number you can refer to at any time in the future.</p>
+            <p class="no-margin-top">We invite you to use our web-based support portal to view and manage your requests <a href="https://support.tacticmedia.com.au" class="standout"><i class="fa fa-globe fa-fw"></i>https://support.tacticmedia.com.au</a>.</p>
         </div>
     </section>
 </main>
 <footer>
-    <div class="container inner">
-        <p>&copy; 2020 Tactic Media Pty Ltd, ABN 31 619 922 977</p>
-        <ul>
-            <li{{#ifpage 'redifi'}} class="active"{{/ifpage}}><a href="{{root}}redifi.html">redifi</a></li>
-            <li{{#ifpage 'photography'}} class="active"{{/ifpage}}><a href="{{root}}photography.html">photography</a></li>
-            <li{{#ifpage 'aerial-photography'}} class="active"{{/ifpage}}><a href="{{root}}aerial-photography.html">aerial photography</a></li>
-            <li{{#ifpage 'software-development'}} class="active"{{/ifpage}}><a href="{{root}}software-development.html">software development</a></li>
-            <li{{#ifpage 'contact'}} class="active"{{/ifpage}}><a href="{{root}}contact.html">contact</a></li>
-        </ul>
+    <div class="container">
+        <div class="inner">
+            <p>&copy; 2020 Tactic Media Pty Ltd, ABN 31 619 922 977</p>
+            <ul>
+                <li{{#ifpage 'redifi'}} class="active"{{/ifpage}}><a href="{{root}}redifi.html">redifi</a></li>
+                <li{{#ifpage 'photography'}} class="active"{{/ifpage}}><a href="{{root}}photography.html">photography</a></li>
+                <li{{#ifpage 'aerial-photography'}} class="active"{{/ifpage}}><a href="{{root}}aerial-photography.html">aerial photography</a></li>
+                <li{{#ifpage 'software-development'}} class="active"{{/ifpage}}><a href="{{root}}software-development.html">software development</a></li>
+                <li{{#ifpage 'contact'}} class="active"{{/ifpage}}><a href="{{root}}contact.html">contact</a></li>
+            </ul>
+        </div>
     </div>
 </footer>
