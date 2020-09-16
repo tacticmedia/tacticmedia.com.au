@@ -1,10 +1,10 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
     <url>
         <loc>https://tacticmedia.com.au/</loc>
-        <loc>https://tacticmedia.com.au/contact.html</loc>
-        <loc>https://tacticmedia.com.au/aaerial-photography.html</loc>
-        <loc>https://tacticmedia.com.au/photography.html</loc>
-        <loc>https://tacticmedia.com.au/redifi.html</loc>
         <loc>https://tacticmedia.com.au/software-development.html</loc>
+        <loc>https://tacticmedia.com.au/photography.html</loc>
+        <loc>https://tacticmedia.com.au/aaerial-photography.html</loc>
+        <loc>https://tacticmedia.com.au/redifi.html</loc>
+        <loc>https://tacticmedia.com.au/contact.html</loc>
     </url>
 </urlset>
