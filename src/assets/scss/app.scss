@@ -1,159 +1,125 @@
-@charset 'utf-8';
+$black: #0a0a0a;
+$iconSize: 40px;
+$iconPadding: 15px;
+$bgBlackTint: linear-gradient( rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7) );
 
-@import 'settings';
-@import 'foundation';
-@import 'motion-ui';
+@import '../icons/css/tacticmedia';
 
-$body-font-family: Lato, 'Helvetica Neue', Helvetica, Roboto, Arial, sans-serif;
+* {
+    font-family: Lato, 'Helvetica Neue', Helvetica, Roboto, Arial, sans-serif;
+}
 
-$header-styles: (
-  small: (
-    'h1': ('font-size': 20),
-    'h2': ('font-size': 20),
-    'h3': ('font-size': 19),
-    'h4': ('font-size': 18),
-    'h5': ('font-size': 17),
-    'h6': ('font-size': 16),
-  ),
-  medium: (
-    'h1': ('font-size': 20),
-    'h2': ('font-size': 20),
-    'h3': ('font-size': 31),
-    'h4': ('font-size': 25),
-    'h5': ('font-size': 20),
-    'h6': ('font-size': 16),
-  ),
-  large: (
-    'h1': ('font-size': 30),
-    'h2': ('font-size': 30),
-    'h3': ('font-size': 30),
-    'h4': ('font-size': 25),
-    'h5': ('font-size': 20),
-    'h6': ('font-size': 16),
-  ),
-);
+a {
+    // We're  using border-bottom to add an underline with :hover effect, so the default text decoration can go
+    text-decoration:none; 
+}
 
-// // Global styles
-@include foundation-global-styles;
-// @include foundation-forms;
-@include foundation-typography;
-
-// // Grids (choose one)
-// @include foundation-xy-grid-classes;
-// // @include foundation-grid;
-// // @include foundation-flex-grid;
-
-// // Generic components
-@include foundation-button;
-// @include foundation-button-group;
-// @include foundation-close-button;
-// @include foundation-label;
-// @include foundation-progress-bar;
-// @include foundation-slider;
-// @include foundation-switch;
-// @include foundation-table;
-// // Basic components
-// @include foundation-badge;
-// @include foundation-breadcrumbs;
-// @include foundation-callout;
-// @include foundation-card;
-// @include foundation-dropdown;
-// @include foundation-pagination;
-// @include foundation-tooltip;
-
-// // Containers
-// @include foundation-accordion;
-// @include foundation-media-object;
-// @include foundation-orbit;
-// @include foundation-responsive-embed;
-// @include foundation-tabs;
-// @include foundation-thumbnail;
-// // Menu-based containers
-// @include foundation-menu;
-// @include foundation-menu-icon;
-// @include foundation-accordion-menu;
-// @include foundation-drilldown-menu;
-// @include foundation-dropdown-menu;
-
-// // Layout components
-// @include foundation-off-canvas;
-// @include foundation-reveal;
-// @include foundation-sticky;
-// @include foundation-title-bar;
-// @include foundation-top-bar;
-
-// // Helpers
-// @include foundation-float-classes;
-// @include foundation-flex-classes;
-@include foundation-visibility-classes;
-// // @include foundation-prototype-classes;
-
-// // Motion UI
-// @include motion-ui-transitions;
-// @include motion-ui-animations;
-
-
-
-$transparent: 0.7;
-$max-width: 1500px;
-
-header, footer {
-    width:100%;
-    background:white;
+body {
+    margin:0;
+    padding:0;
 }
 
 .inner {
     padding:0.5rem 1rem;
 }
 
-header {
-    align-items: center;
-
-
-    h1 {
-        color:$black;
-        font-size:2rem;
-        font-weight:bold;
-        margin:0;
-        padding:0;
-        font-family: 'Lato', sans-serif;
-        font-weight:900;
-        span {
-            font-weight:300;
-        }
-
-        a {
-            color:$black;
-            text-decoration:none;
-        }
-    }
+.container {
+    width:100%;
+    max-width:1300px;
+    margin:auto;
 }
 
-footer {
-    .inner {
+ol ol {
+    list-style-type: lower-roman;
+}
+
+#wrapper {
+    width:100vw;
+
+    @media only screen and (min-width: 768px) {
+        height:100vh;
+    } 
+    
+    margin:0;
+    padding:0;
+    background:$black;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+
+    &>header,
+    &>footer {  
+        background:white;
+        width:100%;
+    }
+
+    &>header {
+        h1 {
+            color:$black;
+            font-size:2rem;
+            font-weight:bold;
+            margin:0.26rem;
+            padding:0;
+            font-family: 'Lato', sans-serif;
+            font-weight:900;
+            span {
+                font-weight:300;
+            }
+    
+            a {
+                color:$black;
+                text-decoration:none;
+
+                display:block;
+                width:214px;
+                height:24px;
+                background-image: url('data:image/svg+xml;utf8,<svg viewBox="0 0 214 24" width="214px" height="24px" xmlns="http://www.w3.org/2000/svg"><path d="M 0 0.255 L 18.646 0.255 L 18.646 4.566 L 12.042 4.566 L 12.042 23.714 L 6.601 23.714 L 6.601 4.566 L 0 4.566 L 0 0.255 Z M 31.078 0.255 L 40.154 23.714 L 35.945 23.714 C 35.469 23.714 35.078 23.606 34.77 23.382 C 34.463 23.167 34.253 22.889 34.139 22.543 L 32.746 18.449 L 23.833 18.449 L 22.44 22.543 C 22.334 22.843 22.128 23.11 21.82 23.347 C 21.505 23.593 21.12 23.714 20.669 23.714 L 16.426 23.714 L 25.501 0.255 L 31.078 0.255 Z M 27.249 8.351 L 25.087 14.746 L 31.492 14.746 L 29.343 8.328 C 29.196 7.913 29.031 7.429 28.846 6.879 C 28.656 6.326 28.47 5.729 28.296 5.084 C 28.12 5.743 27.938 6.349 27.753 6.901 C 27.578 7.46 27.409 7.946 27.249 8.351 Z M 56.857 17.644 C 56.981 17.644 57.107 17.669 57.237 17.723 C 57.369 17.769 57.491 17.85 57.606 17.967 L 59.768 20.242 C 58.825 21.477 57.64 22.409 56.214 23.038 C 54.795 23.658 53.114 23.969 51.164 23.969 C 49.386 23.969 47.792 23.666 46.381 23.062 C 44.971 22.455 43.774 21.62 42.792 20.553 C 41.812 19.487 41.054 18.222 40.525 16.758 C 39.998 15.286 39.732 13.691 39.732 11.975 C 39.732 10.225 40.035 8.617 40.642 7.155 C 41.24 5.689 42.077 4.424 43.159 3.357 C 44.242 2.301 45.534 1.476 47.036 0.886 C 48.538 0.298 50.194 0 52.004 0 C 52.888 0 53.718 0.077 54.5 0.23 C 55.276 0.382 55.999 0.598 56.673 0.874 C 57.35 1.149 57.975 1.481 58.548 1.863 C 59.118 2.239 59.617 2.658 60.056 3.116 L 58.226 5.589 C 58.105 5.736 57.962 5.87 57.8 5.992 C 57.64 6.115 57.415 6.176 57.123 6.176 C 56.932 6.176 56.752 6.134 56.583 6.049 C 56.405 5.964 56.222 5.864 56.029 5.739 C 55.84 5.616 55.627 5.483 55.396 5.337 C 55.167 5.19 54.896 5.058 54.579 4.933 C 54.258 4.811 53.886 4.708 53.465 4.623 C 53.043 4.533 52.545 4.486 51.969 4.486 C 50.988 4.486 50.089 4.662 49.268 5.016 C 48.457 5.359 47.754 5.859 47.164 6.511 C 46.58 7.161 46.126 7.949 45.804 8.868 C 45.477 9.796 45.311 10.829 45.311 11.975 C 45.311 13.177 45.477 14.246 45.804 15.183 C 46.126 16.118 46.571 16.904 47.138 17.541 C 47.7 18.176 48.355 18.664 49.106 19.001 C 49.858 19.33 50.664 19.494 51.522 19.494 C 52.02 19.494 52.473 19.472 52.879 19.427 C 53.286 19.38 53.666 19.297 54.018 19.172 C 54.362 19.059 54.691 18.905 55.005 18.714 C 55.328 18.528 55.65 18.295 55.972 18.013 C 56.096 17.904 56.234 17.816 56.386 17.747 C 56.542 17.676 56.697 17.644 56.857 17.644 Z M 60.637 0.255 L 79.28 0.255 L 79.28 4.566 L 72.678 4.566 L 72.678 23.714 L 67.24 23.714 L 67.24 4.566 L 60.637 4.566 L 60.637 0.255 Z M 87.494 0.255 L 87.494 23.714 L 82.019 23.714 L 82.019 0.255 L 87.494 0.255 Z M 107.608 17.644 C 107.733 17.644 107.858 17.669 107.988 17.723 C 108.119 17.769 108.241 17.85 108.357 17.967 L 110.519 20.242 C 109.575 21.477 108.39 22.409 106.965 23.038 C 105.548 23.658 103.863 23.969 101.916 23.969 C 100.137 23.969 98.542 23.666 97.131 23.062 C 95.72 22.455 94.523 21.62 93.542 20.553 C 92.561 19.487 91.806 18.222 91.277 16.758 C 90.746 15.286 90.482 13.691 90.482 11.975 C 90.482 10.225 90.785 8.617 91.392 7.155 C 91.99 5.689 92.829 4.424 93.909 3.357 C 94.992 2.301 96.284 1.476 97.787 0.886 C 99.291 0.298 100.947 0 102.757 0 C 103.637 0 104.47 0.077 105.25 0.23 C 106.026 0.382 106.749 0.598 107.425 0.874 C 108.1 1.149 108.725 1.481 109.3 1.863 C 109.867 2.239 110.37 2.658 110.807 3.116 L 108.978 5.589 C 108.854 5.736 108.713 5.87 108.552 5.992 C 108.39 6.115 108.166 6.176 107.873 6.176 C 107.682 6.176 107.502 6.134 107.332 6.049 C 107.158 5.964 106.972 5.864 106.782 5.739 C 106.589 5.616 106.378 5.483 106.148 5.337 C 105.92 5.19 105.645 5.058 105.333 4.933 C 105.008 4.811 104.639 4.708 104.216 4.623 C 103.793 4.533 103.295 4.486 102.721 4.486 C 101.741 4.486 100.839 4.662 100.019 5.016 C 99.204 5.359 98.503 5.859 97.914 6.511 C 97.329 7.161 96.877 7.949 96.556 8.868 C 96.226 9.796 96.062 10.829 96.062 11.975 C 96.062 13.177 96.226 14.246 96.556 15.183 C 96.877 16.118 97.322 16.904 97.891 17.541 C 98.449 18.176 99.106 18.664 99.856 19.001 C 100.608 19.33 101.412 19.494 102.273 19.494 C 102.77 19.494 103.223 19.472 103.629 19.427 C 104.035 19.38 104.415 19.297 104.767 19.172 C 105.114 19.059 105.442 18.905 105.758 18.714 C 106.078 18.528 106.402 18.295 106.724 18.013 C 106.845 17.904 106.985 17.816 107.138 17.747 C 107.29 17.676 107.447 17.644 107.608 17.644 Z"/><path d="M 125.396 17.078 C 125.557 17.379 125.695 17.701 125.81 18.047 C 125.88 17.877 125.949 17.709 126.016 17.541 C 126.087 17.372 126.162 17.216 126.249 17.068 L 135.207 1.241 C 135.291 1.098 135.375 1.009 135.46 0.977 C 135.546 0.947 135.662 0.932 135.817 0.932 L 136.956 0.932 L 136.956 23.714 L 135.507 23.714 L 135.507 4.303 C 135.507 4.017 135.52 3.725 135.553 3.416 L 126.592 19.334 C 126.437 19.618 126.223 19.76 125.949 19.76 L 125.685 19.76 C 125.413 19.76 125.2 19.618 125.039 19.334 L 115.827 3.392 C 115.867 3.708 115.885 4.011 115.885 4.303 L 115.885 23.714 L 114.447 23.714 L 114.447 0.932 L 115.574 0.932 C 115.726 0.932 115.851 0.947 115.942 0.977 C 116.027 1.009 116.113 1.098 116.206 1.241 L 125.396 17.078 Z M 143.717 0.932 L 157.371 0.932 L 157.371 2.301 L 145.375 2.301 L 145.375 11.512 L 155.359 11.512 L 155.359 12.847 L 145.375 12.847 L 145.375 22.348 L 157.371 22.348 L 157.371 23.714 L 143.717 23.714 L 143.717 0.932 Z M 181.923 12.317 C 181.923 14.074 181.662 15.657 181.142 17.068 C 180.613 18.472 179.871 19.666 178.921 20.657 C 177.961 21.647 176.816 22.401 175.482 22.922 C 174.155 23.451 172.68 23.714 171.054 23.714 L 162.75 23.714 L 162.75 0.932 L 171.054 0.932 C 172.68 0.932 174.155 1.195 175.482 1.725 C 176.816 2.246 177.961 3.001 178.921 3.991 C 179.871 4.98 180.613 6.176 181.142 7.58 C 181.662 8.99 181.923 10.572 181.923 12.317 Z M 180.221 12.317 C 180.221 10.732 180.004 9.313 179.566 8.062 C 179.12 6.82 178.5 5.771 177.702 4.912 C 176.904 4.052 175.943 3.395 174.815 2.944 C 173.689 2.493 172.434 2.265 171.054 2.265 L 164.406 2.265 L 164.406 22.381 L 171.054 22.381 C 172.434 22.381 173.689 22.155 174.815 21.704 C 175.943 21.253 176.904 20.596 177.702 19.737 C 178.5 18.877 179.12 17.828 179.566 16.584 C 180.004 15.335 180.221 13.913 180.221 12.317 Z M 189.479 0.932 L 189.479 23.714 L 187.821 23.714 L 187.821 0.932 L 189.479 0.932 Z M 204.673 0.932 L 214 23.714 L 212.723 23.714 C 212.578 23.714 212.456 23.679 212.356 23.601 C 212.263 23.517 212.191 23.411 212.137 23.279 L 209.446 16.664 L 198.255 16.664 L 195.574 23.279 C 195.538 23.403 195.466 23.505 195.354 23.59 C 195.25 23.673 195.12 23.714 194.963 23.714 L 193.712 23.714 L 203.038 0.932 L 204.673 0.932 Z M 203.406 3.945 L 198.75 15.436 L 208.962 15.436 L 204.304 3.923 C 204.228 3.744 204.155 3.539 204.085 3.302 C 204.011 3.071 203.934 2.83 203.854 2.575 C 203.78 2.83 203.703 3.071 203.625 3.302 C 203.558 3.539 203.483 3.752 203.406 3.945 Z"/></svg>');
+            }
+        }
+    }
+
+    &>footer {
         font-size:80%;
         color:#666;
 
-        ul {
-            float:right;
-            list-style-type:none;
-            margin:0;
-            padding:0;
+        .inner {
+            display:flex;
 
-            li {
-                float:left;
+            flex-direction:column-reverse;
+            @media only screen and (min-width: 768px) {
+                flex-direction:row;
+            }
+            justify-content: space-between;
 
-                a {
-                    color:$black;
+            p, ul {
+                margin:0;
+                padding:0 0 0 0;
+            }
+
+            @media only screen and (max-width: 768px) {
+                ul {
+                    display:none;
                 }
+            }
 
-                &:after {
-                    content: '';
-                    margin-right:10px;
-                }
+            ul {
+                list-style-type:none;
 
-                &.active {
-                    text-decoration:underline;
+                li {
+                    float:left;
+
+                    a {
+                        color:$black;
+                    }
+
+                    &:after {
+                        content: '';
+                        margin-right:10px;
+                    }
+
+                    &.active {
+                        text-decoration:underline;
+                    }
                 }
             }
         }
@@ -161,298 +127,320 @@ footer {
 }
 
 main {
-    section {
-        color:$black;
+    display:flex;
 
-        border-top-right-radius: 5px;
+    flex-direction:column;
+
+    @media only screen and (min-width: 768px) {
+        height:100%;
+        flex-direction: row;
+    } 
+    
+    background:white;
+
+    section {
+        color:white;
+        background:$black right top no-repeat;
+        @media only screen and (min-width: 768px) {
+            background:$black center no-repeat;
+
+            &#aerial-photography {
+                background-position: top center;
+            }
+        }
+        background-size:cover;
+        border-top-right-radius:5px;
         border-bottom-right-radius:5px;
 
-        margin-bottom:5px; // to add the white "border" between sections
-        margin-right:5px; // to add the white margin from the right corner for small devices
-
-        &:last-child {
-            margin-bottom:0 !important;
+        margin:0px 5px 5px 0px;
+        @media only screen and (min-width: 768px) {
+            margin:0 0 0 5px;
+            border-radius:5px; // all corders should be rounded on large screens
         }
 
-        &:hover {
-            opacity:0.8;
-            cursor:pointer;
+        padding:$iconSize/2; // When the section isn't active, the only concern is that icons must fit
+        &.active { // Once the section is active, additional padding is necessary to make it look good
+            padding:$iconSize/2 $iconSize $iconSize $iconSize/2;
         }
 
-        &.active {
-            .section-logo {
+        @media only screen and (min-width: 768px) {
+            padding:$iconSize/2+$iconPadding;
+        }
+        position:relative; // for the icon that is absolutely positioned
+
+        .content {
+            display:none;
+        }
+        @media only screen and (min-width: 768px) {
+            // H1 and section content is hidden, unless the section is .active
+            header {
                 display:none;
             }
 
-            &:hover {
-                opacity:1;
-                cursor:default;
-            }
+            display:flex;
+            flex-direction:column;
+            overflow:auto;
         }
 
-
-        h1, h2 {
-            font-family: 'Lato', sans-serif;
-            color:#eee;
-            margin-bottom:30px;
+        &>a {
+            color:white;
+            margin:0;
+            padding:0;
+            text-transform: lowercase;
+            font-weight:400;
+            font-size:1.5rem;
         }
 
-        .section-logo {
-            display:block;
-            line-height:30px;
-
-            font-size:20px;
-
-
-            a {
-                padding:15px;
-                display:block;
+        @media only screen and (min-width: 768px) {
+            &>a {
+                overflow:hidden;
+                position:absolute;
+                top:0;
+                left:0;
                 width:100%;
-                color:#fff;
+                height:100%;
+                color:transparent;
+            }
+
+            &.active>a {
+                display:none;
+                width:1px;
+                height:1px;
             }
         }
 
-        .aerial-photograpdhy-icon {
-            display:inline-block;
-            // vertical-align:top;
-            width:50px;
-            height:50px;
-            margin-top:-7px;
-            background:top center no-repeat;
-            background-image: url(data:image/svg+xml;base64,PHN2ZyBmaWxsPSIjRkZGRkZGIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB2ZXJzaW9uPSIxLjEiIHg9IjBweCIgeT0iMHB4IiB2aWV3Qm94PSIwIDAgMTAwIDEwMCIgZW5hYmxlLWJhY2tncm91bmQ9Im5ldyAwIDAgMTAwIDEwMCIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSI+PHBhdGggZD0iTTg4LjYsMzUuN2MtMy40LDAtNi4zLDAuMi04LjcsMC42Yy0wLjctMS4yLTEuNy0xLjktMi45LTEuOWMtMSwwLTIsMC42LTIuNywxLjZjLTMuMS0wLjItNy0wLjMtMTEuMi0wLjMgIGMtMTAsMC03LjcsNC42LDIuMyw0LjZjMywwLDUuNy0wLjIsNy45LTAuNWMwLjMsMC44LDEuMywxLjQsMi41LDEuNlY0M2MtMS40LDAuMi0yLjUsMC45LTIuNSwyYzAsMC40LDAuMSwwLjcsMC4xLDFINTUuOSAgYy0xLjYtMS4zLTMuNy0yLjEtNS45LTIuMXMtNC4zLDAuOC01LjksMi4xSDI2LjZjMC0wLjMsMC4xLTAuNiwwLjEtMWMwLTEuMS0xLjEtMS44LTIuNS0ydi0xLjZjMS4yLTAuMiwyLjItMC44LDIuNS0xLjYgIGMyLjIsMC4zLDQuOSwwLjUsNy45LDAuNWMxMCwwLDEyLjMtNC42LDIuMy00LjZjLTQuMiwwLTguMSwwLjEtMTEuMiwwLjNDMjUsMzUsMjQsMzQuNCwyMywzNC40Yy0xLjIsMC0yLjIsMC43LTIuOSwxLjkgIGMtMi40LTAuNC01LjMtMC42LTguNy0wLjZjLTEwLDAtMTIuMyw0LjYtMi4zLDQuNmMzLjgsMCw3LjMtMC4xLDEwLjMtMC4zYzAuMywwLjgsMS4zLDEuMiwyLjQsMS40VjQzYy0xLjQsMC4zLTIuNSwwLjktMi41LDIgIGMwLDIuOSwxLjcsNS4yLDMuOCw1LjJjMC44LDAsMS41LTAuMywyLjEtMC45aDcuM2wtMTAuNiwyMmMtMC41LDEtMC4xLDIuMywxLDIuN2MxLDAuNSwyLjMsMC4xLDIuNy0xbDExLTIyLjkgIGMwLjEtMC4zLDAuMi0wLjYsMC4yLTAuOWg0LjljLTAuNCwwLjktMC43LDItMC44LDMuMWgtMS4xYy0yLDAtMy43LDEuNy0zLjcsMy43djExLjFjMCwyLDEuNywzLjcsMy43LDMuN2g0LjQgIGMxLjQsMS45LDMuNiwzLjIsNi4xLDMuMnM0LjgtMS4zLDYuMS0zLjJoNC40YzIsMCwzLjctMS43LDMuNy0zLjdWNTYuMmMwLTItMS43LTMuNy0zLjctMy43aC0xLjFjLTAuMS0xLjEtMC40LTIuMS0wLjgtMy4xaDQuOSAgYzAsMC4zLDAuMSwwLjYsMC4yLDAuOWwxMSwyMi45YzAuNSwxLDEuNywxLjUsMi43LDFzMS41LTEuNywxLTIuN2wtMTAuNi0yMmw2LjctMC4yYzAuNiwwLjYsMS4zLDAuOSwyLjEsMC45YzIuMSwwLDMuOC0yLjMsMy44LTUuMiAgYzAtMS4xLTEuMS0xLjctMi41LTJ2LTEuNmMxLjEtMC4yLDIuMS0wLjYsMi40LTEuNGMzLDAuMiw2LjUsMC4zLDEwLjMsMC4zQzEwMC45LDQwLjMsOTguNiwzNS43LDg4LjYsMzUuN3ogTTQyLjIsNTcuMyAgYy0xLjUsMC0yLjgtMC43LTIuOC0xLjVzMS4zLTEuNSwyLjgtMS41UzQ1LDU1LDQ1LDU1LjhTNDMuNyw1Ny4zLDQyLjIsNTcuM3ogTTUwLDY4LjljLTIuOSwwLTUuMi0yLjMtNS4yLTUuMiAgYzAtMi45LDIuMy01LjIsNS4yLTUuMnM1LjIsMi4zLDUuMiw1LjJDNTUuMiw2Ni41LDUyLjksNjguOSw1MCw2OC45eiIvPjwvc3ZnPg==);
+        &>header {
+            padding:0;
+            
+            @media only screen and (min-width: 768px) {
+                padding:0 0 0 $iconSize/2;
+            }
+
+            @media only screen and (min-width: 1280px) {
+                padding:$iconSize 0 0 $iconSize;
+            }
+            
+            h1 {
+                margin:0;
+                padding:0;
+                text-transform: lowercase;
+                font-weight:400;
+            }
         }
 
-        .section-content {
-            color:#eee;
-            // font-size:120%;
-            border-top-right-radius: 5px;
-            border-bottom-right-radius: 5px;
-            background:rgba(0,0,0,$transparent);
+        &>.content {
 
-            padding:15px;
+            padding:$iconSize/2 0 0 0;
+            @media only screen and (min-width: 768px) {
+                padding:$iconSize/2;
+            }
 
-            .content {
+            @media only screen and (min-width: 1280px) {
+                padding:$iconSize 10% 0 $iconSize;
+                overflow:auto;
+            }
 
-                p, ol {
-                    text-align:justify;
-                    max-width:550px;
-                    color:#fff;
+            p, ol {
+                color:#fff;
 
-                    a {
-                        color:#eee;
-                        border-bottom:1px solid #c0c0c0;
+                line-height:150%;
+
+                a {
+                    color:#eee;
+                    border-bottom:1px solid #c0c0c0;
 
 
-                        &.hidelink {
-                            border-bottom:none;
-                            color:inherit;
-                        }
+                    &.hidelink {
+                        border-bottom:none;
+                        color:inherit;
+                    }
+
+                    &:hover {
+                        border-bottom:2px solid #fff;
+                        color:white;
+                    }
+
+                    &.contact {
+                        border:1px solid #c0c0c0;
+                        display:inline-block;
+
+                        line-height:40px;
+                        padding-left:25px;
+                        padding-right:25px;
+
+                        background:rgba(255,255,255,0.1);
+                        box-shadow:0 0 15px rgba(255,255,255, 0.4);
+                        border-radius:5px;
 
                         &:hover {
-                            border-bottom:2px solid #fff;
-                            color:white;
+                            box-shadow:0 0 5px white;
+                            background:rgba(255,255,255,0.5);
                         }
 
-                        &.contact {
-                            border:1px solid #c0c0c0;
-                            display:inline-block;
-
-                            line-height:40px;
-                            padding-left:25px;
-                            padding-right:25px;
-
-                            background:rgba(255,255,255,0.1);
-                            box-shadow:0 0 15px rgba(255,255,255, 0.4);
-                            border-radius:5px;
-
-                            &:hover {
-                                box-shadow:0 0 5px white;
-                                background:rgba(255,255,255,0.5);
-                            }
-
-                            span {
-                                // line-height:50px;
-                                margin-right:5px;
-                                // vertical-align:middle;
-                            }
-                        }
-                    }
-                }
-
-                p {
-                    &:last-child {
-                        margin-top:40px;
-                        margin-bottom:0;
-
-                        &.no-margin-top {
-                            margin-top:0;
+                        span {
+                            // line-height:50px;
+                            margin-right:5px;
+                            // vertical-align:middle;
                         }
                     }
                 }
             }
+
+            p {
+                &:last-child {
+                    margin-top:$iconSize;
+                    margin-bottom:0;
+
+                    &.no-margin-top {
+                        margin-top:0;
+                    }
+                }
+            }
         }
-    }
-}
 
-@include breakpoint(large) {
-
-    header, footer {
-        .inner {
-            padding:0.5rem 1rem;
-            max-width:$max-width;
-            margin:auto;
+        &:hover:not(.active) {
+            cursor:pointer;
         }
-    }
 
-    main {
+        &.background-photo:hover {
+            // a bit of a fade effect when people hover over sections with the backgroun photo - suggests that the link is clickable
+            opacity:0.8;
+        }
 
-        max-width:$max-width;
-        width:100%;
+        &.active {
 
-        section {
+            // .active section outgrows every other section
+            flex-grow: 1;
 
-            border-radius:5px;
-            margin-left:5px;
-            margin-right:0;
-            margin-bottom:0;
+            &.background-photo:hover {
+                // cancel the hover fade effect for active sections
+                opacity:1;
+            }
 
-            display:flex;
-            align-items:stretch;
+            // .active section shows the header and content
+            header, .content {                
+                display:block;
+            }
+        }
+
+        &::after {
+            display:inline-block;
+            width: $iconSize;
+            height:$iconSize;
+            content: ' ';
+            background-repeat: no-repeat;
+            background-position:center;
+            position:absolute;
+            top:$iconPadding;
+            right:$iconPadding;
+        }
+
+        &#home::after {
+            background-image: url('../img/section-icons/index.svg');
+        }
+
+        &#software-development {
+            background-image: url('../img/bg@1x/software-development.jpg');
 
             &.active {
-                .section-logo {
-                    display:block;
+                background-image: $bgBlackTint, url('../img/bg@1x/software-development.jpg'); 
+            }
+
+            @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) { 
+                background-image: url('../img/bg@2x/software-development.jpg');
+
+                &.active {
+                    background-image: $bgBlackTint, url('../img/bg@2x/software-development.jpg'); 
                 }
             }
 
-            .section-logo {
-                border-top-right-radius:5px;
-                border-bottom-right-radius:5px;
+            &::after {
+                background-image: url('../img/section-icons/software-development.svg');
             }
+        }
 
-            .section-content {
-                border-top-left-radius:5px;
-                border-bottom-left-radius:5px;
-                flex-grow:1;
-                padding:100px 40px 100px 100px;
-                flex-basis:0%;
-            }
+        &#photography {
+
+            background-image: url('../img/bg@1x/photography.jpg');
 
             &.active {
-                flex-grow:2;
+                background-image: $bgBlackTint, url('../img/bg@1x/photography.jpg');
+            }
 
-                &:hover {
-                    opacity:1;
-                    cursor:auto;
-                }
+            @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) { 
+                background-image: url('../img/bg@2x/photography.jpg');
 
-                .section-logo {
-                    background:rgba(0,0,0,$transparent);
+                &.active {
+                    background-image: $bgBlackTint, url('../img/bg@2x/photography.jpg');
                 }
             }
 
-            &:first-child {
+            &::after {
+                background-image: url('../img/section-icons/photography.svg');
+            }
+        }
+
+        &#aerial-photography {
+
+            background-image: url('../img/bg@1x/aerial-photography.jpg');
+
+            &.active {
+                background-image: $bgBlackTint, url('../img/bg@1x/aerial-photography.jpg');
+            }
+
+            @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) { 
+                background-image: url('../img/bg@2x/aerial-photography.jpg');
+
+                &.active {
+                    background-image: $bgBlackTint, url('../img/bg@2x/aerial-photography.jpg');
+                }
+            }
+
+            &::after {
+                background-image: url('../img/section-icons/aerial-photography.svg');
+            }
+        }
+
+        &#redifi {
+
+            background-image: url('../img/bg@1x/redifi.jpg');
+
+            &.active {
+                background-image: $bgBlackTint, url('../img/bg@1x/redifi.jpg');
+            }
+
+            @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) { 
+                background-image: url('../img/bg@2x/redifi.jpg');
+
+                &.active {
+                    background-image: $bgBlackTint, url('../img/bg@2x/redifi.jpg');
+                }
+            }
+
+            &::after {
+                background-image: url('../img/section-icons/redifi.svg');
+            }
+        }
+
+        &#contact {
+            &::after {
+                background-image: url('../img/section-icons/contact.svg');
+            }
+        }
+
+        @media only screen and (min-width: 768px) {
+            &:first-of-type {
+                // First section must not have rounded borders on the left,
+                border-top-left-radius: 0;
+                border-bottom-left-radius: 0;
+                // nor the left margin (it's what makes the white dividing lines show up, thanks to the white background)
                 margin-left:0;
-                border-top-left-radius:0;
-                border-bottom-left-radius:0;
-
-                &:hover {
-                    opacity:1;
-                }
-
-                .section-logo,
-                .section-content {
-                    background:none;
-                }
             }
 
-            &:last-child {
-                border-top-right-radius:0;
-                border-bottom-right-radius:0;
-
-                &:hover {
-                    opacity:1;
-                }
-
-                .section-logo,
-                .section-content {
-                    background:none;
-                }
+            &:last-of-type {
+                border-top-right-radius: 0;
+                border-bottom-right-radius: 0;
             }
         }
     }
-}
-
-@include breakpoint(medium down) {
-    section {
-        .fa-2x {
-            font-size:1em !important;
-        }
-
-        .aerial-photography-icon {
-            width:26px !important;
-            height:26px !important;
-            vertical-align: middle;
-        }
-
-        .image-icon {
-            width:20px !important;
-            height:20px !important;
-            margin-right:5px;
-        }
-    }
-}
-
-.vcard {
-    height:100vh;
-    display:flex;
-    background:white;
-    text-align:center;
-    border-bottom:1px #dadada solid;
-
-
-
-    box-shadow: 
-        inset 0px 11px 8px -10px #CCC,
-        inset 0px -11px 8px -10px #CCC; 
-
-    align-items: center;
-    justify-content: center;
-
-    ul {
-        list-style-type:none;
-        margin:0;
-        padding:1rem 0;
-    }
-
-    p {
-        margin:0;
-        padding:2rem 0;
-    }
-
-    .muted {
-        color:#666;
-        display:inline-block;
-        padding-bottom:1rem;
-    }
-
-    img.portrait {
-        border-radius:50%;
-    }
-
-    h1 {
-        padding-top:0.5rem;
-        span {
-            display:block;
-            font-size:80%;
-        }
-    }
-}
-
-.standout {
-    color:white !important;
-}
-
-ol ol {
-    list-style-type: lower-roman;
 }

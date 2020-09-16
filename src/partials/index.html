@@ -1,27 +1,14 @@
-<section id="index"{{#ifpage 'index'}} class="active"{{/ifpage}}{{#unlesspage 'index'}} onclick="location.href='/'"{{/unlesspage}}>
+<section id="home"{{#ifpage 'index'}} class="active"{{/ifpage}}{{#unlesspage 'index'}} onclick="window.location.href='{{root}}index.html'"{{/unlesspage}}>
+    {{#unlesspage 'index'}}<a href="{{root}}index.html">Our team at your service</a>{{/unlesspage}}
     {{#ifpage 'index'}}
-    <div class="section-content">
-        <h1>
-            <i class="fa fa-fw fa-2x fa-home hide-for-large"></i>
-            our team at your service
-        </h1>
-        <div class="content">
-            <p>The main focus at Tactic Media is custom <a href="{{root}}software-development.html">software development</a>.</p>
-            <p>We're working with customers of all sizes on projects spanning from regular websites to complex systems affecting lives of thousands of people every day.</p>
-            <p>We also offer our services of <a href="{{root}}photography.html">photography</a>, <a href="{{root}}aerial-photography.html">aerial photography</a>, and we operate our own cloud platform called <a href="{{root}}redifi.html">redifi</a>.</p>
-            <p><a href="{{root}}/contact.html" class="contact"><span class="fa fa-envelope-o"></span>contact us</a></p>
-        </div>
-        <div class="content show-for-large">
-            <p class="pro-tip"><strong>Pro tip:</strong> use left and right arrow keys to navigate on this website</p>
-        </div>
+    <header>
+        <h1>Our team at your service</h1>
+    </header>
+    <div class="content">
+        <p>The main focus at Tactic Media is custom <a href="{{root}}software-development.html">software development</a>.</p>
+        <p>We're working with on projects of all sizes, spanning from presentation websites websites to complex systems used by thousands users every day.</p>
+        <p>We also offer our services of <a href="{{root}}photography.html">photography</a>, <a href="{{root}}aerial-photography.html">aerial photography</a>, and we operate our own cloud platform called <a href="{{root}}redifi.html">redifi</a>.</p>
+        <p><a href="{{root}}/contact.html" class="contact"><span class="icon-mail"></span>contact us</a></p>
     </div>
     {{/ifpage}}
-    <div class="section-logo{{#ifpage 'index'}} show-for-medium{{/ifpage}}">
-        <div class="icon">
-            <a href="/">
-                <i class="fa fa-fw fa-2x fa-home"></i>
-                <span class="hide-for-large">our team at your service</span>
-            </a>
-        </div>
-    </div>
 </section>

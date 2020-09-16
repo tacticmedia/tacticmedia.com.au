@@ -6,25 +6,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Photography / Tactic Media</title>
     <meta name="robots" content="index,follow">
-    <meta name="description" content="Tactic Media - Photography, Aerial photography, Software development and Redifi operator in Australia">
+    <meta name="description" content="Tactic Media - Custom Software Development, Photography, Redifi.">
     <meta name="author" content="humans.txt">
     <link rel="stylesheet" href="assets/css/app.css">
-    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
-    <link href="https://fonts.googleapis.com/css?family=Lato:300,400,900" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Lato:400" rel="stylesheet">
     <style type="text/css">
 
         body, html {
             width:100%;
             height:100%;
             overflow-x: hidden;
-            background:white;
-        }
-
-        header {
-            background:white;
-        }
-
-        footer {
             background:white;
         }
 
@@ -36,49 +27,18 @@
             background:white;
         }
 
-        main section {
+        body>header {
+            background:white;
+        }
+
+        body>footer {
+            background:white;
+        }
+
+        main>section {
             background:#0a0a0a top center no-repeat;
             background-size: cover;
         }
-
-        @media print, screen and (min-width: 64em) {
-            #wrapper {
-                height:100%;
-                display:flex;
-                flex-direction: column;
-                align-items: center;
-            }
-
-            main {
-                flex-grow:20;
-                align-items: stretch;
-                flex-direction: row;
-                display:flex;
-            }
-
-            main section {
-                background:#0a0a0a top left no-repeat;
-                background-size: cover;
-            }
-        }
-
-
-        #photography {
-            background-image:url(/assets/img/bg@2x/photography.jpg);
-        }
-
-        #aerial-photography {
-            background-image:url(/assets/img/bg@2x/aerial-photography.jpg);
-        }
-
-        #redifi {
-            background-image:url(/assets/img/bg@2x/redifi.jpg);
-        }
-
-        #software-development {
-            background-image:url(/assets/img/bg@2x/software-development.jpg);
-        }
-
     </style>
   </head>
   <body>
@@ -95,98 +55,45 @@
     <div id="wrapper">
         
         <header>
-            <div class="inner">
-                <h1><a href="/" title="Go to Homepage">TACTIC<span>MEDIA</span></a></h1>
+            <div class="container">
+                <div class="inner">
+                    <h1 id="pageheader"><a href="/" title="Go to Homepage"></a></h1>
+                </div>
             </div>
-        </header><main>
-            <section id="index" onclick="location.href='/'">
-                <div class="section-logo">
-                    <div class="icon">
-                        <a href="/">
-                            <i class="fa fa-fw fa-2x fa-home"></i>
-                            <span class="hide-for-large">our team at your service</span>
-                        </a>
-                    </div>
+        </header><main id="main" class="container">
+            <section id="home" onclick="window.location.href='index.html'">
+                <a href="index.html">Our team at your service</a>
+            </section>    <section id="software-development" class="background-photo" onclick="window.location.href='software-development.html'">
+                    <a href="software-development.html" title="Software Development">Software Development</a>
+            </section>    <section id="photography" class="background-photo active">
+                <header>
+                    <h1>Photography</h1>
+                </header>
+                <div class="content">
+                    <p>There is and endless world out there; and that needs capturing. We supply creative minds to help portray your occasion or message.</p>
+                    <p>We then take beautiful well thought out images and get them ready for you to use. Alternatively you can request to look at our stock portfolio.</p>
+                    <p><a href="/contact.html" class="contact"><span class="icon-mail"></span>contact us</a></p>
                 </div>
-            </section>
-            <section id="software-development" onclick="location.href='software-development.html'">
-            
-                <div class="section-logo">
-                    <div class="icon">
-                        <a href="software-development.html">
-                            <img src="assets/img/software-development.svg" width="40" class="image-icon" alt="">
-                            <span class="hide-for-large">custom software development</span>
-                        </a>
-                    </div>
+            </section>    <section id="aerial-photography" class="background-photo" onclick="window.location.href='aerial-photography.html'">
+                    <a href="aerial-photography.html" title="Aerial Photography">Aerial Photography</a>
+            </section>    <section id="redifi" class="background-photo" onclick="window.location.href='redifi.html'">
+                    <a href="redifi.html" title="Redifi">Redifi</a>
+            </section>    <section id="contact" onclick="window.location.href='contact.html'">
+                    <a href="contact.html" title="Contact">Contact</a>
+            </section></main><footer>
+            <div class="container">
+                <div class="inner">
+                    <p>&copy; 2020 Tactic Media Pty Ltd, ABN 31 619 922 977</p>
+                    <ul>
+                        <li><a href="software-development.html">custom software development</a></li>
+                        <li class="active"><a href="photography.html">photography</a></li>
+                        <li><a href="aerial-photography.html">aerial photography</a></li>
+                        <li><a href="redifi.html">redifi</a></li>
+                        <li><a href="contact.html">contact</a></li>
+                    </ul>
                 </div>
-            </section>
-            <section id="photography" class="active">
-                <div class="section-content">
-                    <h1>
-                        <i class="fa fa-fw fa-2x fa-camera hide-for-large"></i>
-                        photography
-                    </h1>
-                    <div class="content">
-                        <p>There is and endless world out there; and that needs capturing. We supply creative minds to help portray your occasion or message.</p>
-                        <p>We then take beautiful well thought out images and get them ready for you to use. Alternatively  you can request to look at our stock portfolio.</p>
-                        <p><a href="/contact.html" class="contact"><span class="fa fa-envelope-o"></span>contact us</a></p>
-                    </div>
-                </div>
-                <div class="section-logo show-for-medium">
-                    <div class="icon">
-                        <a href="photography.html">
-                            <img src="assets/img/photography.svg" width="40" class="image-icon" alt="">
-                            <span class="hide-for-large">photography</span>
-                        </a>
-                    </div>
-                </div>
-            </section>
-            <section id="aerial-photography" onclick="location.href='aerial-photography.html'">
-            
-                <div class="section-logo">
-                    <div class="icon">
-                        <a href="aerial-photography.html">
-                            <img src="assets/img/aerial-photography.svg" width="40" class="image-icon" alt="">
-                            <span class="hide-for-large">aerial photography</span>
-                        </a>
-                    </div>
-                </div>
-            </section>
-            <section id="redifi" onclick="location.href='redifi.html'">
-                <div class="section-logo">
-                    <div class="icon">
-                        <a href="redifi.html">
-                            <img src="assets/img/redifi.svg" width="50" class="image-icon" alt="">
-                            <span class="hide-for-large">redifi</span>
-                        </a>
-                    </div>
-                </div>
-            </section>
-            <section id="contact" onclick="location.href='contact.html'">
-                <div class="section-logo">
-                    <div class="icon">
-                        <a href="contact.html">
-                            <i class="fa fa-fw fa-2x fa-envelope-o"></i>
-                            <span class="hide-for-large">contact</span>
-                        </a>
-                    </div>
-                </div>
-            </section>
-        </main>
-        <footer>
-            <div class="inner">
-                &copy; 2020 Tactic Media Pty Ltd, ABN 31 619 922 977
-                <ul class="show-for-large">
-                    <li><a href="redifi.html">redifi</a></li>
-                    <li class="active"><a href="photography.html">photography</a></li>
-                    <li><a href="aerial-photography.html">aerial photography</a></li>
-                    <li><a href="software-development.html">software development</a></li>
-                    <li><a href="contact.html">contact</a></li>
-                </ul>
             </div>
-        </footer>
-    </div>
-
+        </footer>    </div>
     <script src="assets/js/app.js"></script>
   </body>
 </html>

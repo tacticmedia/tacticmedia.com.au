@@ -1,0 +1,70 @@
+@import '../icons/css/tacticmedia';
+
+* {
+    font-family: Lato, 'Helvetica Neue', Helvetica, Roboto, Arial, sans-serif;
+}
+
+
+a {
+    // We're  using border-bottom to add an underline with :hover effect, so the default text decoration can go
+    text-decoration:none; 
+    color:#1879BA;
+}
+
+html, body {
+    margin:0;
+    padding:0;
+}
+
+.vcard {
+    padding-top:10vh;
+    display:flex;
+    background:white;
+    text-align:center;
+
+    align-items: center;
+    justify-content: center;
+
+    ul {
+        list-style-type:none;
+        margin:0;
+        padding:1rem 0;
+    }
+
+    p {
+        margin:0;
+        padding:2rem 0;
+    }
+
+    .muted {
+        color:#666;
+        display:inline-block;
+        padding-bottom:1rem;
+    }
+
+    img.portrait {
+        border-radius:50%;
+    }
+
+    h1 {
+        font-weight:900;
+        padding-top:0.5rem;
+        span {
+            font-weight:400;
+            display:block;
+            font-size:80%;
+        }
+    }
+
+    .icons {
+        font-size:300%;
+    }
+
+    .button {
+        background:#1879BA;
+        color:white;
+        display:inline-block;
+        padding:1rem 0.75rem;
+        font-size:120%;
+    }
+}

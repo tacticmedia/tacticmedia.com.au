@@ -1,25 +1,17 @@
-<section id="software-development"{{#ifpage 'software-development'}} class="active"{{/ifpage}}{{#unlesspage 'software-development'}} onclick="location.href='{{root}}software-development.html'"{{/unlesspage}}>
-
+<section id="software-development" class="background-photo{{#ifpage 'software-development'}} active{{/ifpage}}"{{#unlesspage 'software-development'}} onclick="window.location.href='{{root}}software-development.html'"{{/unlesspage}}>
+    {{#unlesspage 'software-development'}}
+        <a href="{{root}}software-development.html" title="Software Development">Software Development</a>
+    {{/unlesspage}}
     {{#ifpage 'software-development'}}
-    <div class="section-content">
-        <h1>
-            <i class="fa fa-fw fa-2x fa-code hide-for-large"></i>
-            custom software development
-        </h1>
-        <div class="content">
-            <p>Tactic Media is and always will be run by security and performance advocates that give attention to detail.</p>
-            <p>Our speciality is creating a scalable system architecture based on your business' needs. Once the system architecture blueprint is ready, we can be your team, lead your team or be part of your team.</p>
-            <p>Get in touch if you need help with your current project, or are thinking about the next one.</p>
-            <p><a href="{{root}}/contact.html" class="contact"><span class="fa fa-envelope-o"></span>contact us</a></p>
-        </div>
+    <header>
+        <h1>Software Development</h1>
+    </header>
+    <div class="content">
+        <p>Tactic Media is and always will be run by security and performance advocates that give attention to detail.</p>
+        <p>Our speciality is finding a scalable solution for the problem you're trying to solve.</p>
+        <p>Once the system architecture blueprint is ready, somebody has to do the heavy lifting and develop the product that can ship. We can be your team, lead your team, or be part of your team.</p>
+        <p>Get in touch if you need help with your current project, or are thinking about the next one.</p>
+        <p><a href="{{root}}/contact.html" class="contact"><span class="icon-mail"></span>contact us</a></p>
     </div>
     {{/ifpage}}
-    <div class="section-logo{{#ifpage 'software-development'}} show-for-medium{{/ifpage}}">
-        <div class="icon">
-            <a href="{{root}}software-development.html">
-                <img src="{{root}}assets/img/software-development.svg" width="40" class="image-icon" alt="">
-                <span class="hide-for-large">custom software development</span>
-            </a>
-        </div>
-    </div>
 </section>
