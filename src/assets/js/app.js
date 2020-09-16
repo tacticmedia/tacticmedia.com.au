@@ -13,13 +13,14 @@ window.document.addEventListener("keydown", e => {
 
     let gotoPage = null;
 
-    if (e.which === 37 || e.which === 39) {
+    console.log(e)
+    if (e.key === 'ArrowLeft' || e.key === 'ArrowRight') {
         const url = window.location.pathname;
         const currentPage = url.substring(url.lastIndexOf('/')+1).replace(/\.[^/.]+$/, "") || 'index';
         const currentPageIndex = pages.findIndex(page => page === currentPage);
 
-        switch(e.which) {
-            case 37: // left
+        switch(e.key) {
+            case 'ArrowLeft': // left
 
                 if (currentPageIndex === 0) {
                     gotoPage = pages[pages.length-1];
@@ -28,8 +29,7 @@ window.document.addEventListener("keydown", e => {
                 }
 
                 break;
-            case 39: // right
-
+            case 'ArrowRight': // right
                 if (currentPageIndex === pages.length - 1) {
                     gotoPage = pages[0];
                 } else {
@@ -44,3 +44,23 @@ window.document.addEventListener("keydown", e => {
         }
     }
 });
+
+const copyToClipboard = (str, el) => {
+    const textarea = document.createElement('textarea');
+    textarea.value = str;
+    textarea.setAttribute('readonly', '');
+    textarea.style.position = 'absolute';
+    textarea.style.left = '-9999px';
+    document.body.appendChild(textarea);
+    textarea.select();
+    document.execCommand('copy');
+    document.body.removeChild(textarea);
+
+    const origHtml = el.innerHTML;
+    el.innerHTML = `<p>${str} copied to the clipboard.</p>`;
+    setTimeout(() =>{
+        el.innerHTML = origHtml;
+    }, 1000);
+};
+
+global.copyToClipboard = copyToClipboard;
