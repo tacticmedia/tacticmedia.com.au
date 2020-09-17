@@ -1,70 +1,26 @@
-# ZURB Template
+# Tactic Media Website
 
-[![devDependency Status](https://david-dm.org/zurb/foundation-zurb-template/dev-status.svg)](https://david-dm.org/zurb/foundation-zurb-template#info=devDependencies)
+Copyright 2020 Tactic Media Pty Ltd
 
-**Please open all issues with this template on the main [Foundation for Sites](https://github.com/zurb/foundation-sites/issues) repo.**
+Author: Jan Klan
 
-This is the official ZURB Template for use with [Foundation for Sites](http://foundation.zurb.com/sites). We use this template at ZURB to deliver static code to our clients. It has a Gulp-powered build system with these features:
+## Requirements
 
-- Handlebars HTML templates with Panini
-- Sass compilation and prefixing
-- JavaScript module bundling with webpack
-- Built-in BrowserSync server
-- For production builds:
-  - CSS compression
-  - JavaScript module bundling with webpack
-  - Image compression
+1. Node 12
+2. AWS CLI & profile with permissions to do actions in deploy.sh
 
-## Installation
+## Usage
 
-To use this template, your computer needs:
+1. Run `npm install` to install packages
+2. Run `npm start` to start development
+3. Stop the node process when you're done
+4. Run `./deploy.sh` to update the staging environment
+5. Run `./deploy.sh production` to update the production environment
 
-- [NodeJS](https://nodejs.org/en/) (Version 6 or greater recommended, tested with 6.11.4 and 8.12.0)
-- [Git](https://git-scm.com/)
+## Hosting
 
-This template can be installed with the Foundation CLI, or downloaded and set up manually.
+This website is fully static and can be hosted directly on a CDN. Have a look at [Tactic Media AWS Toolkit](https://github.com/tacticmedia/aws-toolkit) to get help with setting up your static web hosting on AWS.
 
-### Using the CLI
+## Need a website like this? 
 
-Install the Foundation CLI with this command:
-
-```bash
-npm install foundation-cli --global
-```
-
-Use this command to set up a blank Foundation for Sites project with this template:
-
-```bash
-foundation new --framework sites --template zurb
-```
-
-The CLI will prompt you to give your project a name. The template will be downloaded into a folder with this name.
-
-Now `cd` to your project name and to start your project run 
-
-```bash
-foundation watch
-```
-
-### Manual Setup
-
-To manually set up the template, first download it with Git:
-
-```bash
-git clone https://github.com/zurb/foundation-zurb-template projectname
-```
-
-Then open the folder in your command line, and install the needed dependencies:
-
-```bash
-cd projectname
-yarn
-```
-
-Finally, run `yarn start` to run Gulp. Your finished site will be created in a folder called `dist`, viewable at this URL:
-
-```
-http://localhost:8000
-```
-
-To create compressed, production-ready assets, run `yarn run build`.
+[Get in touch.](https://tacticmedia.com.au/contact.html)
