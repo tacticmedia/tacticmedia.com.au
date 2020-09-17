@@ -1,8 +1,5 @@
-<section id="software-development" class="background-photo{{#ifpage 'software-development'}} active{{/ifpage}}"{{#unlesspage 'software-development'}} onclick="window.location.href='{{root}}software-development.html'"{{/unlesspage}}>
-    {{#unlesspage 'software-development'}}
-        <a href="{{root}}software-development.html" title="Software Development">Software Development</a>
-    {{/unlesspage}}
-    {{#ifpage 'software-development'}}
+{{#ifpage 'software-development'}}
+<div id="software-development" class="background-photo active">
     <header>
         <h1>Software Development</h1>
     </header>
@@ -13,5 +10,9 @@
         <p>Get in touch if you need help with your current project, or are thinking about the next one.</p>
         <p><a href="{{root}}/contact.html" class="contact"><span class="icon-mail"></span>contact us</a></p>
     </div>
-    {{/ifpage}}
-</section>
+</div>
+{{/ifpage}}{{#unlesspage 'software-development'}}
+<div id="software-development" class="background-photo" onclick="window.location.href='{{root}}software-development.html'">
+    <a href="{{root}}software-development.html" title="Software Development">Software Development</a>
+</div>
+{{/unlesspage}}

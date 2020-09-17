@@ -1,8 +1,5 @@
-<section id="photography" class="background-photo{{#ifpage 'photography'}} active{{/ifpage}}"{{#unlesspage 'photography'}} onclick="window.location.href='{{root}}photography.html'"{{/unlesspage}}>
-    {{#unlesspage 'photography'}}
-        <a href="{{root}}photography.html" title="Photography">Photography</a>
-    {{/unlesspage}}
-    {{#ifpage 'photography'}}
+{{#ifpage 'photography'}}
+<div id="photography" class="background-photo active">
     <header>
         <h1>Photography</h1>
     </header>
@@ -11,5 +8,9 @@
         <p>We then take beautiful well thought out images and get them ready for you to use. Alternatively you can request to look at our stock portfolio.</p>
         <p><a href="{{root}}/contact.html" class="contact"><span class="icon-mail"></span>contact us</a></p>
     </div>
-    {{/ifpage}}
-</section>
+</div>
+{{/ifpage}}{{#unlesspage 'photography'}}
+<div id="photography" class="background-photo" onclick="window.location.href='{{root}}photography.html'">
+    <a href="{{root}}photography.html" title="Photography">Photography</a>
+</div>
+{{/unlesspage}}

@@ -1,8 +1,5 @@
-<section id="redifi" class="background-photo{{#ifpage 'redifi'}} active{{/ifpage}}"{{#unlesspage 'redifi'}} onclick="window.location.href='{{root}}redifi.html'"{{/unlesspage}}>
-    {{#unlesspage 'redifi'}}
-        <a href="{{root}}redifi.html" title="Redifi">Redifi</a>
-    {{/unlesspage}}
-    {{#ifpage 'redifi'}}
+{{#ifpage 'redifi'}}
+<div id="redifi" class="background-photo active">
     <header>
         <h1>Redifi</h1>
     </header>
@@ -16,5 +13,9 @@
             <p><a href="{{root}}/contact.html" class="contact"><span class="icon-mail"></span>contact us</a></p>
         </p>
     </div>
-    {{/ifpage}}
-</section>
+</div>
+{{/ifpage}}{{#unlesspage 'redifi'}}
+<div id="redifi" class="background-photo"{{#unlesspage 'redifi'}} onclick="window.location.href='{{root}}redifi.html'"{{/unlesspage}}>
+    <a href="{{root}}redifi.html" title="Redifi">Redifi</a>
+</div>
+{{/unlesspage}}

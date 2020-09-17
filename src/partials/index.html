@@ -1,6 +1,5 @@
-<section id="home"{{#ifpage 'index'}} class="active"{{/ifpage}}{{#unlesspage 'index'}} onclick="window.location.href='{{root}}index.html'"{{/unlesspage}}>
-    {{#unlesspage 'index'}}<a href="{{root}}index.html">Our team at your service</a>{{/unlesspage}}
-    {{#ifpage 'index'}}
+{{#ifpage 'index'}}
+<div id="home" class="active">
     <header>
         <h1>Our team at your service</h1>
     </header>
@@ -10,5 +9,9 @@
         <p>We also offer our services of <a href="{{root}}photography.html">photography</a>, <a href="{{root}}aerial-photography.html">aerial photography</a>, and we operate our own cloud platform called <a href="{{root}}redifi.html">redifi</a>.</p>
         <p><a href="{{root}}/contact.html" class="contact"><span class="icon-mail"></span>contact us</a></p>
     </div>
-    {{/ifpage}}
-</section>
+</div>
+{{/ifpage}}{{#unlesspage 'index'}}
+<div id="home" onclick="window.location.href='{{root}}index.html'">
+    <a href="{{root}}index.html">Our team at your service</a>
+</div>
+{{/unlesspage}}

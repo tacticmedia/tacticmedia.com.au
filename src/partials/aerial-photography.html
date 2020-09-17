@@ -1,8 +1,5 @@
-<section id="aerial-photography" class="background-photo{{#ifpage 'aerial-photography'}} active{{/ifpage}}"{{#unlesspage 'aerial-photography'}} onclick="window.location.href='{{root}}aerial-photography.html'"{{/unlesspage}}>
-    {{#unlesspage 'aerial-photography'}}
-        <a href="{{root}}aerial-photography.html" title="Aerial Photography">Aerial Photography</a>
-    {{/unlesspage}}
-    {{#ifpage 'aerial-photography'}}
+{{#ifpage 'aerial-photography'}}
+<div id="aerial-photography" class="background-photo active">
     <header>
         <h1>Aerial Photography</h1>
     </header>
@@ -11,5 +8,9 @@
         <p>We can help you capture photos and footage from weddings, parties, team building events etc.</p>
         <p><a href="{{root}}/contact.html" class="contact"><span class="icon-mail"></span>contact us</a></p>
     </div>
-    {{/ifpage}}
-</section>
+</div>
+{{/ifpage}}{{#unlesspage 'aerial-photography'}}
+<div id="aerial-photography" class="background-photo" onclick="window.location.href='{{root}}aerial-photography.html'">
+    <a href="{{root}}aerial-photography.html" title="Aerial Photography">Aerial Photography</a>
+</div>
+{{/unlesspage}}

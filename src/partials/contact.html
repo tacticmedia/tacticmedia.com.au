@@ -1,8 +1,5 @@
-<section id="contact"{{#ifpage 'contact'}} class="active"{{/ifpage}}{{#unlesspage 'contact'}} onclick="window.location.href='{{root}}contact.html'"{{/unlesspage}}>
-    {{#unlesspage 'contact'}}
-        <a href="{{root}}contact.html" title="Contact">Contact</a>
-    {{/unlesspage}}
-    {{#ifpage 'contact'}}
+{{#ifpage 'contact'}}
+<div id="contact" class="active">
     <header>
         <h1>Contact</h1>
     </header>
@@ -22,5 +19,9 @@
         <p>All emails sent to the support e-mail address will be assigned a unique number you can refer to at any time in the future.</p>
         <p class="no-margin-top">We invite you to use our web-based support portal to view and manage your requests <a href="https://support.tacticmedia.com.au"><i class="icon-globe"></i>https://support.tacticmedia.com.au</a>.</p>
     </div>
-    {{/ifpage}}
-</section>
+</div>
+{{/ifpage}}{{#unlesspage 'contact'}}
+<div id="contact" onclick="window.location.href='{{root}}contact.html'">
+    <a href="{{root}}contact.html" title="Contact">Contact</a>
+</div>
+{{/unlesspage}}
